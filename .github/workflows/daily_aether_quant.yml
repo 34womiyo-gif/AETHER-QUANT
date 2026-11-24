@@ -1,0 +1,43 @@
+name: AETHER QUANT Daily Auto Monitor
+
+on:
+  schedule:
+    # 毎日 日本時間 08:00（UTC 23:00）に自動実行
+    - cron: '0 23 * * *'
+  # GitHub画面から手動で今すぐテスト実行もできるようにする
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-aether-quant:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリのコードを取得
+        uses: actions/checkout@v4
+
+      - name: Python 3.11 のセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 必要なライブラリをインストール
+        run: |
+          pip install --upgrade pip
+          pip install yfinance requests
+
+      - name: リアルタイム株価監視 ＆ LINE通知実行
+        env:
+          LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: |
+          python aether_quant_bot.py
+
+      - name: 最新ポートフォリオデータ(portfolio_live.json)を自動保存
+        run: |
+          git config user.name "AETHER QUANT Bot"
+          git config user.email "bot@aether-quant.local"
+          git add portfolio_live.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update realtime portfolio data" && git push)
