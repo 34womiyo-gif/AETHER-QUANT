@@ -1,3 +1,10 @@
+"""
+AETHER QUANT - リアルタイム株価監視 ＆ LINE自動通知システム（クラウド設定連動版）
+================================================================================
+ダッシュボード(index.html)から更新される `portfolio_config.json` を読み込み、
+リアルタイム株価・為替を取得して `portfolio_live.json` 出力 ＆ LINEプッシュ通知を行います。
+"""
+
 import os
 import json
 import requests
@@ -10,64 +17,37 @@ from datetime import datetime
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv("LINE_CHANNEL_ACCESS_TOKEN", "")
 LINE_USER_ID = os.getenv("LINE_USER_ID", "")
 
-# ==========================================
-# 2. あなたのポートフォリオ設定（保有銘柄・待機資金）
-# ==========================================
-CASH_BALANCE_JPY = 1400000  # 待機資金（日本円）
+CONFIG_FILE = "portfolio_config.json"
 
-HOLDINGS_CONFIG = [
-    {
-        "name": "三菱UFJフィナンシャルG",
-        "ticker": "8306.T",
-        "sector": "金融",
-        "currency": "JPY",
-        "shares": 1000,         # 保有株数
-        "avg_cost": 1300.0      # 1株あたりの平均取得単価（円）
-    },
-    {
-        "name": "三井住友フィナンシャルG",
-        "ticker": "8316.T",
-        "sector": "金融",
-        "currency": "JPY",
-        "shares": 300,
-        "avg_cost": 3000.0
-    },
-    {
-        "name": "バンガード S&P500 ETF",
-        "ticker": "VOO",
-        "sector": "米国ETF",
-        "currency": "USD",
-        "shares": 30,
-        "avg_cost": 490.0       # 1株あたりの平均取得単価（ドル）
-    },
-    {
-        "name": "Apple Inc.",
-        "ticker": "AAPL",
-        "sector": "IT・半導体",
-        "currency": "USD",
-        "shares": 40,
-        "avg_cost": 215.0
-    },
-    {
-        "name": "NVIDIA Corp.",
-        "ticker": "NVDA",
-        "sector": "IT・半導体",
-        "currency": "USD",
-        "shares": 60,
-        "avg_cost": 122.0
-    },
-    {
-        "name": "三井物産",
-        "ticker": "8031.T",
-        "sector": "商社・資源",
-        "currency": "JPY",
-        "shares": 450,
-        "avg_cost": 2888.0
+
+# ==========================================
+# 2. ポートフォリオ設定の読み込み（portfolio_config.json）
+# ==========================================
+def load_portfolio_config():
+    """大元設定ファイル(portfolio_config.json)を読み込む"""
+    default_config = {
+        "cash_jpy": 1400000,
+        "holdings": [
+            {"name": "三菱UFJフィナンシャルG", "ticker": "8306.T", "sector": "金融", "currency": "JPY", "shares": 1000, "avg_cost": 1300.0},
+            {"name": "バンガード S&P500 ETF", "ticker": "VOO", "sector": "米国ETF", "currency": "USD", "shares": 30, "avg_cost": 490.0}
+        ]
     }
-]
+    if os.path.exists(CONFIG_FILE):
+        try:
+            with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if "holdings" in data:
+                    return data
+        except Exception as e:
+            print(f"[警告] {CONFIG_FILE} の読み込みに失敗したためデフォルトを使用します: {e}")
+    return default_config
 
 
+# ==========================================
+# 3. リアルタイム為替・株価取得関数
+# ==========================================
 def get_realtime_usdjpy() -> float:
+    """Yahoo Financeから最新のドル円レート（USD/JPY）を取得"""
     try:
         fx = yf.Ticker("USDJPY=X")
         hist = fx.history(period="5d")
@@ -79,6 +59,7 @@ def get_realtime_usdjpy() -> float:
 
 
 def get_realtime_price(ticker: str) -> float:
+    """指定ティッカーの最新終値（取引時間中は現在値）を取得"""
     try:
         stock = yf.Ticker(ticker)
         hist = stock.history(period="5d")
@@ -89,7 +70,15 @@ def get_realtime_price(ticker: str) -> float:
     return 0.0
 
 
+# ==========================================
+# 4. ポートフォリオ評価 ＆ 鉄壁リスク判定エンジン
+# ==========================================
 def analyze_portfolio():
+    """最新株価を取得し、総資産・損益率・-10%ロスカット・分散比率を判定"""
+    config = load_portfolio_config()
+    cash_jpy = float(config.get("cash_jpy", 0))
+    holdings_list = config.get("holdings", [])
+
     usdjpy = get_realtime_usdjpy()
     print(f"現在のドル円レート: 1ドル = {usdjpy:.2f} 円")
 
@@ -99,49 +88,55 @@ def analyze_portfolio():
     danger_alerts = []
     warning_alerts = []
 
-    for item in HOLDINGS_CONFIG:
-        price = get_realtime_price(item["ticker"])
-        if price <= 0:
-            price = item["avg_cost"]
+    for item in holdings_list:
+        ticker = item["ticker"]
+        currency = item.get("currency", "USD" if ticker.isalpha() else "JPY")
+        shares = float(item.get("shares", 1))
+        avg_cost = float(item.get("avg_cost", 0))
 
-        fx_rate = usdjpy if item["currency"] == "USD" else 1.0
-        cost_jpy = item["avg_cost"] * item["shares"] * fx_rate
-        value_jpy = price * item["shares"] * fx_rate
+        price = get_realtime_price(ticker)
+        if price <= 0:
+            price = avg_cost
+
+        fx_rate = usdjpy if currency == "USD" else 1.0
+        cost_jpy = avg_cost * shares * fx_rate
+        value_jpy = price * shares * fx_rate
         pnl_jpy = value_jpy - cost_jpy
-        pnl_pct = ((price - item["avg_cost"]) / item["avg_cost"]) * 100.0
+        pnl_pct = ((price - avg_cost) / avg_cost * 100.0) if avg_cost > 0 else 0.0
 
         stock_total_jpy += value_jpy
         cost_total_jpy += cost_jpy
 
         evaluated_items.append({
-            "id": item["ticker"].lower().replace(".", "_"),
+            "id": ticker.lower().replace(".", "_"),
             "name": item["name"],
-            "ticker": item["ticker"],
-            "sector": item["sector"],
-            "shares": item["shares"],
-            "avg_cost": item["avg_cost"],
+            "ticker": ticker,
+            "sector": item.get("sector", "その他"),
+            "shares": shares,
+            "avg_cost": avg_cost,
             "price": price,
-            "currency": item["currency"],
+            "currency": currency,
             "cost_jpy": cost_jpy,
             "value_jpy": value_jpy,
             "pnl_jpy": pnl_jpy,
             "pnl_pct": pnl_pct
         })
 
+        # 鉄壁ルール①：-10% 機械的ロスカット判定
         if pnl_pct <= -10.0:
             danger_alerts.append(
-                f"🚨【緊急損切り】{item['name']} ({item['ticker']})\n"
+                f"🚨【緊急損切り】{item['name']} ({ticker})\n"
                 f"   現在損益: {pnl_pct:.2f}%（-10%防衛ライン突破！）"
             )
         elif pnl_pct <= -5.0:
             warning_alerts.append(
-                f"⚠️【注意監視】{item['name']} ({item['ticker']}): {pnl_pct:.2f}%"
+                f"⚠️【注意監視】{item['name']} ({ticker}): {pnl_pct:.2f}%"
             )
 
-    total_assets_jpy = stock_total_jpy + CASH_BALANCE_JPY
+    total_assets_jpy = stock_total_jpy + cash_jpy
     total_pnl_jpy = stock_total_jpy - cost_total_jpy
     total_pnl_pct = (total_pnl_jpy / cost_total_jpy * 100.0) if cost_total_jpy > 0 else 0.0
-    cash_ratio = (CASH_BALANCE_JPY / total_assets_jpy * 100.0) if total_assets_jpy > 0 else 0.0
+    cash_ratio = (cash_jpy / total_assets_jpy * 100.0) if total_assets_jpy > 0 else 0.0
 
     for ev in evaluated_items:
         ev["weight"] = (ev["value_jpy"] / total_assets_jpy * 100.0) if total_assets_jpy > 0 else 0.0
@@ -156,7 +151,7 @@ def analyze_portfolio():
         "total_assets_jpy": total_assets_jpy,
         "total_pnl_jpy": total_pnl_jpy,
         "total_pnl_pct": total_pnl_pct,
-        "cash_jpy": CASH_BALANCE_JPY,
+        "cash_jpy": cash_jpy,
         "cash_ratio": cash_ratio,
         "items": evaluated_items,
         "danger_alerts": danger_alerts,
@@ -165,7 +160,11 @@ def analyze_portfolio():
     }
 
 
+# ==========================================
+# 5. LINE Messaging API プッシュ送信関数
+# ==========================================
 def send_line_push_message(message_text: str):
+    """LINE Messaging APIを使って指定ユーザーにプッシュ通知を送る"""
     if not LINE_CHANNEL_ACCESS_TOKEN or not LINE_USER_ID:
         print("❌ LINEトークンまたはユーザーIDが未設定です")
         return
@@ -180,14 +179,18 @@ def send_line_push_message(message_text: str):
         "messages": [{"type": "text", "text": message_text}]
     }
 
-    resp = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
-    if resp.status_code == 200:
-        print("✅ LINEへのプッシュ通知送信に成功しました！")
-    else:
-        print(f"❌ LINE送信エラー ({resp.status_code}): {resp.text}")
+    try:
+        resp = requests.post(url, headers=headers, data=json.dumps(payload), timeout=10)
+        if resp.status_code == 200:
+            print("✅ LINEへのプッシュ通知送信に成功しました！")
+        else:
+            print(f"❌ LINE送信エラー ({resp.status_code}): {resp.text}")
+    except Exception as e:
+        print(f"❌ LINE通信例外エラー: {e}")
 
 
 def build_report_message(result: dict) -> str:
+    """LINEに送信する見やすいレポートテキストを組み立てる"""
     sign = "+" if result["total_pnl_jpy"] >= 0 else ""
     lines = [
         f"📡 AETHER QUANT 定期レポート",
@@ -226,6 +229,7 @@ def build_report_message(result: dict) -> str:
 
 
 def save_live_json(result: dict, filepath: str = "portfolio_live.json"):
+    """ダッシュボード画面(index.html)が読み込むための最新JSONデータを出力"""
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
     print(f"💾 ダッシュボード連携用データ ({filepath}) を保存しました！")
