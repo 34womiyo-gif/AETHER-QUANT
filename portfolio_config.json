@@ -1,0 +1,53 @@
+{
+"cash_jpy": 1400000,
+"holdings": [
+{
+"name": "三菱UFJフィナンシャルG",
+"ticker": "8306.T",
+"sector": "金融",
+"currency": "JPY",
+"shares": 1000,
+"avg_cost": 1300.0
+},
+{
+"name": "三井住友フィナンシャルG",
+"ticker": "8316.T",
+"sector": "金融",
+"currency": "JPY",
+"shares": 300,
+"avg_cost": 3000.0
+},
+{
+"name": "バンガード S&P500 ETF",
+"ticker": "VOO",
+"sector": "米国ETF",
+"currency": "USD",
+"shares": 30,
+"avg_cost": 490.0
+},
+{
+"name": "Apple Inc.",
+"ticker": "AAPL",
+"sector": "IT・半導体",
+"currency": "USD",
+"shares": 40,
+"avg_cost": 215.0
+},
+{
+"name": "NVIDIA Corp.",
+"ticker": "NVDA",
+"sector": "IT・半導体",
+"currency": "USD",
+"shares": 60,
+"avg_cost": 122.0
+},
+{
+"name": "三井物産",
+"ticker": "8031.T",
+"sector": "商社・資源",
+"currency": "JPY",
+"shares": 450,
+"avg_cost": 2888.0
+}
+]
+}
