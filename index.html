@@ -22,13 +22,8 @@
       background-size: 100% 100%, 100% 100%, 100% 100%, 34px 34px, 34px 34px;
       background-attachment: fixed;
     }
-    .font-cyber {
-      font-family: 'Orbitron', 'Inter', sans-serif;
-      letter-spacing: 0.03em;
-    }
-    .font-mono-num {
-      font-family: 'JetBrains Mono', monospace;
-    }
+    .font-cyber { font-family: 'Orbitron', 'Inter', sans-serif; letter-spacing: 0.03em; }
+    .font-mono-num { font-family: 'JetBrains Mono', monospace; }
     .cyber-panel {
       background: linear-gradient(155deg, rgba(8, 18, 36, 0.90) 0%, rgba(5, 11, 24, 0.94) 100%);
       backdrop-filter: blur(12px);
@@ -53,46 +48,22 @@
       border: 1px solid rgba(255, 184, 0, 0.30);
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.65), inset 0 0 18px rgba(255, 184, 0, 0.04);
     }
-    .neon-text-cyan {
-      text-shadow: 0 0 12px rgba(0, 240, 255, 0.45);
-    }
-    .neon-text-emerald {
-      text-shadow: 0 0 12px rgba(0, 255, 157, 0.4);
-    }
-    .neon-text-rose {
-      text-shadow: 0 0 12px rgba(255, 59, 107, 0.45);
-    }
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #040914;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #163a52;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #00f0ff;
-    }
+    .neon-text-cyan { text-shadow: 0 0 12px rgba(0, 240, 255, 0.45); }
+    .neon-text-emerald { text-shadow: 0 0 12px rgba(0, 255, 157, 0.4); }
+    .neon-text-rose { text-shadow: 0 0 12px rgba(255, 59, 107, 0.45); }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #040914; }
+    ::-webkit-scrollbar-thumb { background: #163a52; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
     @keyframes pulse-border {
       0%, 100% { border-color: rgba(255, 59, 107, 0.85); box-shadow: 0 0 16px rgba(255, 59, 107, 0.35); }
       50% { border-color: rgba(255, 59, 107, 0.25); box-shadow: 0 0 4px rgba(255, 59, 107, 0.1); }
     }
-    .danger-pulse {
-      animation: pulse-border 2s infinite;
-    }
-    canvas {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
+    .danger-pulse { animation: pulse-border 2s infinite; }
+    canvas { display: block; width: 100%; height: 100%; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col">
-
-  <!-- トップナビゲーションバー -->
   <header class="sticky top-0 z-30 bg-[#040a17]/90 backdrop-blur-md border-b border-cyan-500/25 shadow-[0_4px_24px_rgba(0,240,255,0.08)]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 sm:py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
       <div class="flex items-center justify-between gap-2">
@@ -105,18 +76,13 @@
           <div>
             <h1 class="text-sm sm:text-lg font-cyber font-bold tracking-wider flex items-center gap-2 text-cyan-50 neon-text-cyan">
               <span>AETHER QUANT</span>
-              <span class="hidden md:inline-block font-sans text-xs font-medium px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-400/40 shadow-[0_0_10px_rgba(0,240,255,0.2)]">
-                長期分散・鉄壁守備中
-              </span>
+              <span class="hidden md:inline-block font-sans text-xs font-medium px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-400/40 shadow-[0_0_10px_rgba(0,240,255,0.2)]">長期分散・鉄壁守備中</span>
             </h1>
             <p class="text-[11px] text-cyan-200/60 hidden sm:block">日米個別株・ETF 長期運用 ／ 過去推移・傾向分析＆AI買い時発掘</p>
           </div>
         </div>
-        <span class="sm:hidden text-[10px] font-medium px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-400/40 shrink-0">
-          鉄壁守備中
-        </span>
+        <span class="sm:hidden text-[10px] font-medium px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-400/40 shrink-0">鉄壁守備中</span>
       </div>
-
       <div class="grid grid-cols-3 sm:flex items-center gap-2">
         <button onclick="resetSimulation()" class="text-xs bg-slate-900/90 hover:bg-cyan-950/70 text-cyan-200 px-2.5 py-2 sm:py-1.5 rounded-lg border border-cyan-500/30 transition flex items-center justify-center gap-1">
           <svg class="w-3.5 h-3.5 shrink-0 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
@@ -134,7 +100,6 @@
     </div>
   </header>
 
-  <!-- 世界情勢＆市場環境ティッカー -->
   <div class="bg-[#050d1e]/90 border-b border-fuchsia-500/25 px-3 sm:px-6 py-2">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center justify-between gap-1.5 text-xs">
@@ -153,10 +118,7 @@
     </div>
   </div>
 
-  <!-- メインコンテンツ -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8 sm:space-y-10">
-
-    <!-- ① 資産・KPIサマリー -->
     <section class="cyber-panel-emerald rounded-2xl p-4 sm:p-6">
       <div class="flex items-center justify-between mb-4 pb-2.5 border-b border-emerald-400/25">
         <div class="flex items-center gap-2">
@@ -165,7 +127,6 @@
         </div>
         <span class="text-[11px] text-emerald-300/80 font-mono-num">REALTIME MONITOR</span>
       </div>
-
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4">
         <div class="bg-[#040c18]/90 border border-cyan-400/30 rounded-xl p-4 shadow-[inset_0_0_15px_rgba(0,240,255,0.05)]">
           <div class="text-xs text-cyan-300/80 mb-1">総資産評価額（株式＋現金）</div>
@@ -175,7 +136,6 @@
             <span class="text-cyan-300/60">評価損益</span>
           </div>
         </div>
-
         <div class="bg-[#040c18]/90 border border-emerald-400/35 rounded-xl p-4 shadow-[inset_0_0_15px_rgba(0,255,157,0.05)]">
           <div class="flex items-center justify-between mb-1">
             <span class="text-xs text-emerald-300/80">待機資金（現金余力）</span>
@@ -186,7 +146,6 @@
           <div class="text-2xl font-bold font-mono-num text-emerald-300 neon-text-emerald" id="kpi-cash">¥1,400,000</div>
           <div class="text-xs text-cyan-200/70 mt-1.5" id="kpi-cash-ratio">資産比率: 13.5%（目安10%以上維持）</div>
         </div>
-
         <div class="bg-[#040c18]/90 border border-fuchsia-400/30 rounded-xl p-4 shadow-[inset_0_0_15px_rgba(184,41,255,0.05)]">
           <div class="text-xs text-fuchsia-300/80 mb-1">鉄壁ルール稼働状況</div>
           <div class="text-lg font-bold text-cyan-200 flex items-center gap-1.5" id="kpi-rule-status">
@@ -194,7 +153,6 @@
           </div>
           <div class="text-xs text-cyan-200/70 mt-1.5" id="kpi-max-sector">最大業種比率: 金融 24.2%</div>
         </div>
-
         <div class="bg-[#040c18]/90 border border-cyan-400/30 rounded-xl p-4 shadow-[inset_0_0_15px_rgba(0,240,255,0.05)]">
           <div class="text-xs text-cyan-300/80 mb-1">AI本日の投資スタンス</div>
           <div class="text-lg font-bold text-amber-300" id="kpi-ai-stance">押し目買い待機・分散維持</div>
@@ -203,13 +161,8 @@
       </div>
     </section>
 
-    <!-- メイン2カラム -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-      <!-- 左カラム (8/12) -->
       <div class="lg:col-span-8 space-y-8 sm:space-y-10">
-
-        <!-- ② 資産・損益推移＆分散チャート -->
         <section class="cyber-panel-purple rounded-2xl p-4 sm:p-6">
           <div class="flex items-center justify-between mb-4 pb-2.5 border-b border-fuchsia-400/25">
             <div class="flex items-center gap-2">
@@ -218,7 +171,6 @@
             </div>
             <span class="text-[11px] text-fuchsia-300/80 font-mono-num">ANALYTICS</span>
           </div>
-
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             <div class="bg-[#050a18]/90 border border-fuchsia-500/25 rounded-xl p-4">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -241,7 +193,6 @@
                 <button onclick="selectStock(null)" id="reset-chart-scope-btn" class="hidden text-fuchsia-300 hover:text-fuchsia-200 underline text-[11px]">全体表示に戻す</button>
               </div>
             </div>
-
             <div class="bg-[#050a18]/90 border border-cyan-500/25 rounded-xl p-4 overflow-hidden">
               <div class="flex items-center justify-between mb-3">
                 <h3 class="text-sm font-bold text-cyan-50">ポートフォリオ業種分散バランス</h3>
@@ -257,7 +208,6 @@
           </div>
         </section>
 
-        <!-- ③ 鉄壁リスク管理ガードレール -->
         <section class="cyber-panel-amber rounded-2xl p-4 sm:p-6">
           <div class="flex items-center justify-between mb-4 pb-2.5 border-b border-amber-400/25">
             <div class="flex items-center gap-2">
@@ -266,11 +216,9 @@
             </div>
             <span class="text-[11px] text-amber-300/80 font-mono-num">GUARDRAILS</span>
           </div>
-
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs" id="guardrail-list"></div>
         </section>
 
-        <!-- ④ 保有銘柄リスト＆売却/値動きテスト -->
         <section class="cyber-panel rounded-2xl p-4 sm:p-6">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-2.5 border-b border-cyan-400/25">
             <div class="flex items-center gap-2">
@@ -289,16 +237,13 @@
               </span>
             </div>
           </div>
-
           <div class="flex items-center justify-between text-[11px] text-cyan-300/75 mb-2.5 px-1">
             <span>👈 横にスクロールして全銘柄を確認</span>
             <span id="holdings-count-badge" class="font-mono-num text-cyan-200">全 6 銘柄</span>
           </div>
-
           <div class="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory scroll-smooth" id="holdings-list"></div>
         </section>
 
-        <!-- ⑤ AI詳細レポート＆過去傾向・買い時発掘 -->
         <section class="cyber-panel rounded-2xl p-4 sm:p-6 space-y-6">
           <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-cyan-400/25">
             <div class="flex items-center gap-2">
@@ -307,9 +252,7 @@
             </div>
             <span class="text-xs px-2.5 py-1 rounded-full font-semibold" id="detail-badge">長期ホールド推奨</span>
           </div>
-
           <div class="bg-[#040a16]/90 rounded-xl p-4 border border-cyan-400/30 space-y-3 text-sm leading-relaxed" id="detail-content"></div>
-
           <div class="bg-[#041418]/90 rounded-2xl p-4 sm:p-5 border border-emerald-400/35 shadow-[inset_0_0_20px_rgba(0,255,157,0.04)]">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-2.5 border-b border-emerald-400/25">
               <div>
@@ -319,11 +262,8 @@
                 </h3>
                 <p class="text-xs text-cyan-200/70 mt-0.5">直近の下げトレンドからの反発兆候・長期上昇トレンドの押し目をAIが自動発掘</p>
               </div>
-              <span class="text-[11px] bg-emerald-500/20 text-emerald-200 border border-emerald-400/40 px-2.5 py-1 rounded-full">
-                分散バランス最適候補
-              </span>
+              <span class="text-[11px] bg-emerald-500/20 text-emerald-200 border border-emerald-400/40 px-2.5 py-1 rounded-full">分散バランス最適候補</span>
             </div>
-
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5 text-xs">
               <div class="bg-[#030b14]/90 border border-cyan-500/25 rounded-xl p-3">
                 <div class="text-cyan-300/70 mb-1">保有株の過去1年傾向</div>
@@ -341,26 +281,20 @@
                 <p class="text-cyan-200/65 mt-1 leading-relaxed">過去の反発ライン（RSI 35〜42・200日移動平均線付近）に到達した優良株を抽出。</p>
               </div>
             </div>
-
             <div class="flex items-center justify-between text-[11px] text-emerald-300/80 mb-2.5 px-1">
               <span>👈 横にスクロールして買い時候補を比較</span>
               <span class="font-mono-num text-emerald-200">全 4 候補</span>
             </div>
-
             <div class="flex overflow-x-auto gap-4 pb-3 snap-x snap-mandatory scroll-smooth" id="recommended-stocks-list"></div>
           </div>
         </section>
-
       </div>
 
-      <!-- 右カラム (4/12)：LINE Bot通知シミュレーター -->
       <div class="lg:col-span-4 lg:sticky lg:top-20">
         <div class="bg-[#050c1a] border-2 border-cyan-500/35 rounded-[2rem] p-3.5 shadow-[0_0_30px_rgba(0,240,255,0.12)]">
           <div class="bg-[#0b192c] rounded-t-2xl px-4 py-3 flex items-center justify-between border-b border-cyan-500/25">
             <div class="flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-400 to-cyan-500 flex items-center justify-center text-slate-950 font-bold text-xs shadow-[0_0_12px_rgba(0,255,157,0.45)]">
-                AI
-              </div>
+              <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-emerald-400 to-cyan-500 flex items-center justify-center text-slate-950 font-bold text-xs shadow-[0_0_12px_rgba(0,255,157,0.45)]">AI</div>
               <div>
                 <div class="text-xs font-bold text-white flex items-center gap-1">
                   <span>AI投資参謀 Bot</span>
@@ -369,87 +303,54 @@
                 <div class="text-[10px] text-cyan-300/70">自動監視・売買判断アラート</div>
               </div>
             </div>
-            <button onclick="clearLineMessages()" class="text-[10px] text-cyan-300/70 hover:text-white px-2 py-1 rounded bg-slate-900 border border-cyan-500/25">
-              履歴クリア
-            </button>
+            <button onclick="clearLineMessages()" class="text-[10px] text-cyan-300/70 hover:text-white px-2 py-1 rounded bg-slate-900 border border-cyan-500/25">履歴クリア</button>
           </div>
-
           <div id="line-chat-area" class="bg-[#0d1f36] h-[440px] sm:h-[480px] overflow-y-auto p-3.5 space-y-3 text-xs"></div>
-
           <div class="bg-[#081222] rounded-b-2xl p-2.5 border-t border-cyan-500/25 space-y-2">
             <div class="text-[10px] text-cyan-300/70 px-1">LINEで参謀にクイック質問：</div>
             <div class="flex flex-wrap gap-1.5">
-              <button onclick="askLineBot('今買い増ししていい？')" class="text-[11px] bg-cyan-950/70 hover:bg-cyan-900/80 text-cyan-100 px-2.5 py-1.5 rounded-full border border-cyan-500/35 transition">
-                今買い増ししていい？
-              </button>
-              <button onclick="askLineBot('今の危険銘柄は？')" class="text-[11px] bg-cyan-950/70 hover:bg-cyan-900/80 text-cyan-100 px-2.5 py-1.5 rounded-full border border-cyan-500/35 transition">
-                今の危険銘柄は？
-              </button>
-              <button onclick="askLineBot('過去傾向から今の買い時は？')" class="text-[11px] bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 px-2.5 py-1.5 rounded-full border border-emerald-400/40 transition">
-                今の買い時株は？
-              </button>
+              <button onclick="askLineBot('今買い増ししていい？')" class="text-[11px] bg-cyan-950/70 hover:bg-cyan-900/80 text-cyan-100 px-2.5 py-1.5 rounded-full border border-cyan-500/35 transition">今買い増ししていい？</button>
+              <button onclick="askLineBot('今の危険銘柄は？')" class="text-[11px] bg-cyan-950/70 hover:bg-cyan-900/80 text-cyan-100 px-2.5 py-1.5 rounded-full border border-cyan-500/35 transition">今の危険銘柄は？</button>
+              <button onclick="askLineBot('過去傾向から今の買い時は？')" class="text-[11px] bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-200 px-2.5 py-1.5 rounded-full border border-emerald-400/40 transition">今の買い時株は？</button>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </main>
 
-  <!-- 待機資金10%未満アラートポップアップ -->
   <div id="cash-alert-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-[#070f1e] border-2 border-amber-400/80 rounded-2xl max-w-md w-full p-5 shadow-[0_0_35px_rgba(255,184,0,0.3)] space-y-4">
       <div class="flex items-start gap-3">
-        <div class="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-400/50 flex items-center justify-center shrink-0 text-amber-300 text-lg">
-          ⚠️
-        </div>
+        <div class="w-10 h-10 rounded-full bg-amber-500/20 border border-amber-400/50 flex items-center justify-center shrink-0 text-amber-300 text-lg">⚠️</div>
         <div>
           <h3 class="text-base font-bold text-amber-200">待機資金（現金比率）が10%を下回りました！</h3>
           <p class="text-xs text-cyan-200/75 mt-1">暴落時の買い増し余力・防衛資金の安全ライン（10%）を割り込んでいます。</p>
         </div>
       </div>
-
       <div id="cash-alert-detail" class="bg-[#030812] border border-amber-500/35 rounded-xl p-3.5 text-xs space-y-2"></div>
-
-      <p class="text-xs text-cyan-100/85 leading-relaxed">
-        このまま買い進めると相場急落時に動けなくなるリスクがあります。投資金額を減らすか、一部銘柄の売却テストで現金比率を10%以上に戻すことを推奨します。
-      </p>
-
+      <p class="text-xs text-cyan-100/85 leading-relaxed">このまま買い進めると相場急落時に動けなくなるリスクがあります。投資金額を減らすか、一部銘柄の売却テストで現金比率を10%以上に戻すことを推奨します。</p>
       <div class="flex justify-end pt-1">
-        <button onclick="closeCashAlertModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition shadow-[0_0_15px_rgba(255,184,0,0.35)]">
-          確認しました（調整する）
-        </button>
+        <button onclick="closeCashAlertModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold transition shadow-[0_0_15px_rgba(255,184,0,0.35)]">確認しました（調整する）</button>
       </div>
     </div>
   </div>
 
-  <!-- 待機資金（現金）の追加入金・修正モーダル -->
   <div id="cash-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-[#070f1e] border border-emerald-400/50 rounded-2xl max-w-md w-full p-5 shadow-[0_0_35px_rgba(0,255,157,0.2)] space-y-4">
       <div class="flex items-center justify-between border-b border-emerald-500/25 pb-3">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <span class="text-emerald-300">💴 待機資金（現金余力）の調整</span>
-        </h3>
+        <h3 class="text-base font-bold text-white flex items-center gap-2"><span class="text-emerald-300">💴 待機資金（現金余力）の調整</span></h3>
         <button onclick="closeCashModal()" class="text-cyan-300/70 hover:text-white">✕</button>
       </div>
-
       <div class="bg-[#030812] border border-emerald-500/30 rounded-xl p-3 text-xs flex justify-between items-center">
         <span class="text-cyan-300/70">現在の待機資金残高</span>
         <span id="cash-modal-current" class="font-bold font-mono-num text-emerald-300 text-sm">140.0 万円</span>
       </div>
-
       <div class="grid grid-cols-3 gap-1.5 bg-[#030812] p-1 rounded-xl border border-cyan-500/30 text-xs">
-        <button type="button" id="cash-mode-add" onclick="setCashModalMode('add')" class="py-1.5 px-2 rounded-lg bg-emerald-500 text-slate-950 font-bold transition">
-          ＋ 入金（加算）
-        </button>
-        <button type="button" id="cash-mode-sub" onclick="setCashModalMode('sub')" class="py-1.5 px-2 rounded-lg text-cyan-200 hover:text-white transition">
-          － 出金（減算）
-        </button>
-        <button type="button" id="cash-mode-set" onclick="setCashModalMode('set')" class="py-1.5 px-2 rounded-lg text-cyan-200 hover:text-white transition">
-          ✏️ 直接修正
-        </button>
+        <button type="button" id="cash-mode-add" onclick="setCashModalMode('add')" class="py-1.5 px-2 rounded-lg bg-emerald-500 text-slate-950 font-bold transition">＋ 入金（加算）</button>
+        <button type="button" id="cash-mode-sub" onclick="setCashModalMode('sub')" class="py-1.5 px-2 rounded-lg text-cyan-200 hover:text-white transition">－ 出金（減算）</button>
+        <button type="button" id="cash-mode-set" onclick="setCashModalMode('set')" class="py-1.5 px-2 rounded-lg text-cyan-200 hover:text-white transition">✏️ 直接修正</button>
       </div>
-
       <form onsubmit="handleAdjustCash(event)" class="space-y-3.5 text-xs">
         <div>
           <label id="cash-input-label" class="block text-cyan-100 mb-1.5 font-medium">追加入金する金額（万円）</label>
@@ -476,13 +377,10 @@
     </div>
   </div>
 
-  <!-- 売却確定の確認モーダル -->
   <div id="sell-confirm-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-[#070f1e] border border-rose-500/60 rounded-2xl max-w-md w-full p-5 shadow-[0_0_35px_rgba(255,59,107,0.3)] space-y-4">
       <div class="flex items-center justify-between border-b border-rose-500/25 pb-3">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <span class="text-rose-400">⚠️ 売却確定（リストから削除）の確認</span>
-        </h3>
+        <h3 class="text-base font-bold text-white flex items-center gap-2"><span class="text-rose-400">⚠️ 売却確定（リストから削除）の確認</span></h3>
         <button onclick="closeSellConfirmModal()" class="text-cyan-300/70 hover:text-white">✕</button>
       </div>
       <div id="sell-confirm-body" class="text-xs text-cyan-100 space-y-3 leading-relaxed"></div>
@@ -493,7 +391,6 @@
     </div>
   </div>
 
-  <!-- 新規銘柄追加モーダル -->
   <div id="add-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
     <div class="bg-[#070f1e] border border-cyan-400/50 rounded-2xl max-w-md w-full p-5 shadow-[0_0_35px_rgba(0,240,255,0.2)] space-y-4">
       <div class="flex items-center justify-between border-b border-cyan-500/25 pb-3">
@@ -535,143 +432,26 @@
     </div>
   </div>
 
-  <!-- トースト通知エリア -->
   <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-[#071326] border border-cyan-400/60 text-cyan-50 px-4 py-3 rounded-xl shadow-[0_0_24px_rgba(0,240,255,0.3)] text-xs flex items-center gap-3">
     <span id="toast-msg">通知メッセージ</span>
-    <button id="toast-undo-btn" onclick="restoreLastDeletedStock()" class="hidden px-2.5 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shrink-0 transition">
-      ↩️ 元に戻す
-    </button>
+    <button id="toast-undo-btn" onclick="restoreLastDeletedStock()" class="hidden px-2.5 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shrink-0 transition">↩️ 元に戻す</button>
   </div>
 
   <script>
     const INITIAL_CASH = 1400000;
-
     const INITIAL_HOLDINGS = [
-      {
-        id: 'mufg',
-        name: '三菱UFJフィナンシャルG',
-        ticker: '8306.T',
-        sector: '金融',
-        costBasis: 1300000,
-        currentValue: 1520000,
-        dividendYield: 3.4,
-        history1Y: [130, 133, 131, 136, 140, 138, 143, 147, 145, 149, 150, 152],
-        trendSummary: '過去1年で+16.9%の上昇トレンド。25日移動平均線を下値支持線として堅調に推移。',
-        newsSummary: '国内金利の緩やかな上昇に伴い利ざや改善が継続。自社株買いと増配基調が下値を支える好材料。',
-        aiComment: '業績・株主還元ともに極めて盤石。含み益+16.9%を確保しており、長期ホールドの柱として継続保有を推奨。'
-      },
-      {
-        id: 'smfg',
-        name: '三井住友フィナンシャルG',
-        ticker: '8316.T',
-        sector: '金融',
-        costBasis: 900000,
-        currentValue: 980000,
-        dividendYield: 3.6,
-        history1Y: [90, 91, 89, 92, 94, 93, 95, 97, 96, 97, 98, 98],
-        trendSummary: '過去1年で+8.9%の安定推移。大きなドローダウンがなくディフェンシブ性が強い。',
-        newsSummary: '法人向け融資と海外事業が堅調。ただし金融セクター全体の比率が24%超のため新規買い増しは控えめに。',
-        aiComment: '高配当を維持しつつ安定推移。すでに金融枠が十分にあるため、配当再投資は他業種へ回すのがベスト。'
-      },
-      {
-        id: 'voo',
-        name: 'バンガード S&P500 ETF',
-        ticker: 'VOO',
-        sector: '米国ETF',
-        costBasis: 2200000,
-        currentValue: 2560000,
-        dividendYield: 1.3,
-        history1Y: [220, 224, 222, 229, 235, 233, 240, 246, 244, 250, 253, 256],
-        trendSummary: '過去1年で+16.4%の王道右肩上がり。押し目では常に機関投資家の買いが入る傾向。',
-        newsSummary: '米企業の利益成長とAI生産性向上が指数を牽引。長期資産形成のコア資産として機能中。',
-        aiComment: 'ポートフォリオの核となる優良ETF。単一銘柄比率が24%台とやや高いため、他銘柄を増やして比率を平準化したい。'
-      },
-      {
-        id: 'aapl',
-        name: 'Apple Inc.',
-        ticker: 'AAPL',
-        sector: 'IT・半導体',
-        costBasis: 1300000,
-        currentValue: 1390000,
-        dividendYield: 0.5,
-        history1Y: [130, 128, 125, 129, 133, 136, 134, 138, 141, 137, 138, 139],
-        trendSummary: '春先に一時-3.8%調整したものの、サービス部門の成長を背景に高値圏へ切り返し中。',
-        newsSummary: '端末内AI機能による買い替え需要と高収益なサービス部門の伸びが好感。サプライチェーンの中国リスクは注視。',
-        aiComment: '長期的なブランド力とキャッシュ創出力は圧倒的。-10%防衛ラインまで十分な余裕があり継続保有。'
-      },
-      {
-        id: 'nvda',
-        name: 'NVIDIA Corp.',
-        ticker: 'NVDA',
-        sector: 'IT・半導体',
-        costBasis: 1100000,
-        currentValue: 1035000,
-        dividendYield: 0.03,
-        history1Y: [110, 118, 125, 122, 130, 126, 119, 115, 112, 108, 105, 103.5],
-        trendSummary: '高値圏から利益確定売りが続き直近は調整局面（-5.9%）。過去にも10〜15%調整後に急反発した履歴あり。',
-        newsSummary: 'AIデータセンター投資は依然強いものの、次世代チップの供給制約と利益確定売りで短期ボラティリティが拡大中。',
-        aiComment: '現在-5.91%の含み損で【注意監視ゾーン（-5%〜-8%）】に入っています。長期の成長ストーリーは崩れていませんが、-10%（99万円）を明確に割れた場合は機械的に一部損切りを実行します。'
-      },
-      {
-        id: 'mitsui',
-        name: '三井物産',
-        ticker: '8031.T',
-        sector: '商社・資源',
-        costBasis: 1300000,
-        currentValue: 1450000,
-        dividendYield: 3.1,
-        history1Y: [130, 132, 135, 134, 138, 141, 139, 142, 144, 143, 144, 145],
-        trendSummary: '過去1年で+11.5%の安定した上昇波動。資源価格の変動を非資源分野がうまく吸収。',
-        newsSummary: '累進配当政策と積極的な株主還元を継続。インフレヘッジ資産としても有効に機能中。',
-        aiComment: 'インフレ耐性と高配当を兼ね備えた優秀な銘柄。現在の比率（約14%）も理想的です。'
-      }
+      { id: 'mufg', name: '三菱UFJフィナンシャルG', ticker: '8306.T', sector: '金融', costBasis: 1300000, currentValue: 1520000, dividendYield: 3.4, history1Y: [130, 133, 131, 136, 140, 138, 143, 147, 145, 149, 150, 152], trendSummary: '過去1年で+16.9%の上昇トレンド。25日移動平均線を下値支持線として堅調に推移。', newsSummary: '国内金利の緩やかな上昇に伴い利ざや改善が継続。自社株買いと増配基調が下値を支える好材料。', aiComment: '業績・株主還元ともに極めて盤石。含み益+16.9%を確保しており、長期ホールドの柱として継続保有を推奨。' },
+      { id: 'smfg', name: '三井住友フィナンシャルG', ticker: '8316.T', sector: '金融', costBasis: 900000, currentValue: 980000, dividendYield: 3.6, history1Y: [90, 91, 89, 92, 94, 93, 95, 97, 96, 97, 98, 98], trendSummary: '過去1年で+8.9%の安定推移。大きなドローダウンがなくディフェンシブ性が強い。', newsSummary: '法人向け融資と海外事業が堅調。ただし金融セクター全体の比率が24%超のため新規買い増しは控えめに。', aiComment: '高配当を維持しつつ安定推移。すでに金融枠が十分にあるため、配当再投資は他業種へ回すのがベスト。' },
+      { id: 'voo', name: 'バンガード S&P500 ETF', ticker: 'VOO', sector: '米国ETF', costBasis: 2200000, currentValue: 2560000, dividendYield: 1.3, history1Y: [220, 224, 222, 229, 235, 233, 240, 246, 244, 250, 253, 256], trendSummary: '過去1年で+16.4%の王道右肩上がり。押し目では常に機関投資家の買いが入る傾向。', newsSummary: '米企業の利益成長とAI生産性向上が指数を牽引。長期資産形成のコア資産として機能中。', aiComment: 'ポートフォリオの核となる優良ETF。単一銘柄比率が24%台とやや高いため、他銘柄を増やして比率を平準化したい。' },
+      { id: 'aapl', name: 'Apple Inc.', ticker: 'AAPL', sector: 'IT・半導体', costBasis: 1300000, currentValue: 1390000, dividendYield: 0.5, history1Y: [130, 128, 125, 129, 133, 136, 134, 138, 141, 137, 138, 139], trendSummary: '春先に一時-3.8%調整したものの、サービス部門の成長を背景に高値圏へ切り返し中。', newsSummary: '端末内AI機能による買い替え需要と高収益なサービス部門の伸びが好感。サプライチェーンの中国リスクは注視。', aiComment: '長期的なブランド力とキャッシュ創出力は圧倒的。-10%防衛ラインまで十分な余裕があり継続保有。' },
+      { id: 'nvda', name: 'NVIDIA Corp.', ticker: 'NVDA', sector: 'IT・半導体', costBasis: 1100000, currentValue: 1035000, dividendYield: 0.03, history1Y: [110, 118, 125, 122, 130, 126, 119, 115, 112, 108, 105, 103.5], trendSummary: '高値圏から利益確定売りが続き直近は調整局面（-5.9%）。過去にも10〜15%調整後に急反発した履歴あり。', newsSummary: 'AIデータセンター投資は依然強いものの、次世代チップの供給制約と利益確定売りで短期ボラティリティが拡大中。', aiComment: '現在-5.91%の含み損で【注意監視ゾーン（-5%〜-8%）】に入っています。長期の成長ストーリーは崩れていませんが、-10%（99万円）を明確に割れた場合は機械的に一部損切りを実行します。' },
+      { id: 'mitsui', name: '三井物産', ticker: '8031.T', sector: '商社・資源', costBasis: 1300000, currentValue: 1450000, dividendYield: 3.1, history1Y: [130, 132, 135, 134, 138, 141, 139, 142, 144, 143, 144, 145], trendSummary: '過去1年で+11.5%の安定した上昇波動。資源価格の変動を非資源分野がうまく吸収。', newsSummary: '累進配当政策と積極的な株主還元を継続。インフレヘッジ資産としても有効に機能中。', aiComment: 'インフレ耐性と高配当を兼ね備えた優秀な銘柄。現在の比率（約14%）も理想的です。' }
     ];
-
     const RECOMMENDED_CANDIDATES = [
-      {
-        id: 'rec_takeda',
-        name: '武田薬品工業',
-        ticker: '4502.T',
-        sector: 'ヘルスケア',
-        dividendYield: 4.4,
-        recommendedAmount: 700000,
-        buySignal: '過去5年の下値支持線付近・配当4.4%',
-        pastPattern: '過去3年間、4,000円割れ水準では利回り狙いの長期資金が流入し反発する傾向が強い。',
-        reason: '現在のポートフォリオに不足している「ヘルスケア（景気耐性）」を補完でき、暴落時のクッション役として最適。'
-      },
-      {
-        id: 'rec_jnj',
-        name: 'Johnson & Johnson',
-        ticker: 'JNJ',
-        sector: 'ヘルスケア',
-        dividendYield: 3.2,
-        recommendedAmount: 650000,
-        buySignal: '62年連続増配・RSI 38の売られすぎ水準',
-        pastPattern: '訴訟懸念で一時調整した過去局面でも、医療機器・医薬品の安定収益により1年以内に高値を奪還。',
-        reason: '米国株のIT偏重を和らげる王道ディフェンシブ株。長期分散の安定感を大きく引き上げます。'
-      },
-      {
-        id: 'rec_ntt',
-        name: '日本電信電話 (NTT)',
-        ticker: '9432.T',
-        sector: '通信・インフラ',
-        dividendYield: 3.4,
-        recommendedAmount: 500000,
-        buySignal: '200日移動平均線乖離-7%・押し目到達',
-        pastPattern: '過去の調整局面でも通信インフラの安定キャッシュフローが評価され、緩やかな右肩上がりに回帰。',
-        reason: '1単元あたりの単価が低く、待機資金から無理なく段階的に買い下がり（分割投資）しやすい優良インフラ株。'
-      },
-      {
-        id: 'rec_pg',
-        name: 'Procter & Gamble',
-        ticker: 'PG',
-        sector: '生活必需品',
-        dividendYield: 2.5,
-        recommendedAmount: 600000,
-        buySignal: 'インフレ耐性・直近高値から-5%調整',
-        pastPattern: '景気後退期でも日用品の値上げ浸透力が強く、過去10年の下落耐性はS&P500を大きく上回る。',
-        reason: '金融・半導体などの景気敏感株との相性が抜群で、ポートフォリオ全体の値動きをマイルドにします。'
-      }
+      { id: 'rec_takeda', name: '武田薬品工業', ticker: '4502.T', sector: 'ヘルスケア', dividendYield: 4.4, recommendedAmount: 700000, buySignal: '過去5年の下値支持線付近・配当4.4%', pastPattern: '過去3年間、4,000円割れ水準では利回り狙いの長期資金が流入し反発する傾向が強い。', reason: '現在のポートフォリオに不足している「ヘルスケア（景気耐性）」を補完でき、暴落時のクッション役として最適。' },
+      { id: 'rec_jnj', name: 'Johnson & Johnson', ticker: 'JNJ', sector: 'ヘルスケア', dividendYield: 3.2, recommendedAmount: 650000, buySignal: '62年連続増配・RSI 38の売られすぎ水準', pastPattern: '訴訟懸念で一時調整した過去局面でも、医療機器・医薬品の安定収益により1年以内に高値を奪還。', reason: '米国株のIT偏重を和らげる王道ディフェンシブ株。長期分散の安定感を大きく引き上げます。' },
+      { id: 'rec_ntt', name: '日本電信電話 (NTT)', ticker: '9432.T', sector: '通信・インフラ', dividendYield: 3.4, recommendedAmount: 500000, buySignal: '200日移動平均線乖離-7%・押し目到達', pastPattern: '過去の調整局面でも通信インフラの安定キャッシュフローが評価され、緩やかな右肩上がりに回帰。', reason: '1単元あたりの単価が低く、待機資金から無理なく段階的に買い下がり（分割投資）しやすい優良インフラ株。' },
+      { id: 'rec_pg', name: 'Procter & Gamble', ticker: 'PG', sector: '生活必需品', dividendYield: 2.5, recommendedAmount: 600000, buySignal: 'インフレ耐性・直近高値から-5%調整', pastPattern: '景気後退期でも日用品の値上げ浸透力が強く、過去10年の下落耐性はS&P500を大きく上回る。', reason: '金融・半導体などの景気敏感株との相性が抜群で、ポートフォリオ全体の値動きをマイルドにします。' }
     ];
 
     let holdings = JSON.parse(JSON.stringify(INITIAL_HOLDINGS));
@@ -685,1336 +465,50 @@
     let cashModalMode = 'add';
 
     function evaluatePortfolio() {
-      let stockTotal = 0;
-      let totalCost = 0;
-      const sectorMap = {};
-      const alerts = [];
-      let dangerCount = 0;
-      let warningCount = 0;
-
+      let stockTotal = 0, totalCost = 0;
+      const sectorMap = {}, alerts = [];
+      let dangerCount = 0, warningCount = 0;
       holdings.forEach(item => {
         if (item.isSellTest) return;
         stockTotal += item.currentValue;
         totalCost += item.costBasis;
         sectorMap[item.sector] = (sectorMap[item.sector] || 0) + item.currentValue;
       });
-
       const totalAssets = stockTotal + cashBalance;
       const totalPnl = stockTotal - totalCost;
       const totalPnlPct = totalCost > 0 ? (totalPnl / totalCost) * 100 : 0;
       const cashRatio = totalAssets > 0 ? (cashBalance / totalAssets) * 100 : 0;
-
       holdings.forEach(item => {
         if (item.isSellTest) {
           item.pnl = item.currentValue - item.costBasis;
           item.pnlPct = item.costBasis > 0 ? (item.pnl / item.costBasis) * 100 : 0;
-          item.weight = 0;
-          item.status = 'sell_test';
-          item.statusLabel = '売却テスト中（現金化仮定）';
+          item.weight = 0; item.status = 'sell_test'; item.statusLabel = '売却テスト中（現金化仮定）';
           return;
         }
-
         const pnl = item.currentValue - item.costBasis;
         const pnlPct = (pnl / item.costBasis) * 100;
         const weight = totalAssets > 0 ? (item.currentValue / totalAssets) * 100 : 0;
-
-        item.pnl = pnl;
-        item.pnlPct = pnlPct;
-        item.weight = weight;
-
-        if (pnlPct <= -10.0) {
-          item.status = 'danger';
-          item.statusLabel = '損切り到達 (-10%超)';
-          dangerCount++;
-          alerts.push({
-            type: 'danger',
-            stock: item,
-            message: `【緊急：機械的損切りアラート】${item.name}（${item.ticker}）が含み損 ${pnlPct.toFixed(1)}% となり、防衛ライン（-10%）を突破しました。感情を挟まず一部または全株の売却を推奨します。`
-          });
-        } else if (pnlPct <= -5.0) {
-          item.status = 'warning';
-          item.statusLabel = '注意監視 (-5%〜-8%)';
-          warningCount++;
-        } else if (pnlPct >= 25.0) {
-          item.status = 'take_profit';
-          item.statusLabel = '利確検討 (+25%超)';
-        } else {
-          item.status = 'safe';
-          item.statusLabel = 'ホールド順調';
-        }
-
-        if (weight > 15.0) {
-          alerts.push({
-            type: 'concentration',
-            stock: item,
-            message: `【集中リスク警告】${item.name}の資産比率が ${weight.toFixed(1)}%（上限目安15%）を超えています。新規買い増しを停止し、他業種への分散を優先してください。`
-          });
-        }
+        item.pnl = pnl; item.pnlPct = pnlPct; item.weight = weight;
+        if (pnlPct <= -10.0) { item.status = 'danger'; item.statusLabel = '損切り到達 (-10%超)'; dangerCount++; }
+        else if (pnlPct <= -5.0) { item.status = 'warning'; item.statusLabel = '注意監視 (-5%〜-8%)'; warningCount++; }
+        else if (pnlPct >= 25.0) { item.status = 'take_profit'; item.statusLabel = '利確検討 (+25%超)'; }
+        else { item.status = 'safe'; item.statusLabel = 'ホールド順調'; }
       });
-
       let maxSector = { name: '-', ratio: 0 };
       Object.entries(sectorMap).forEach(([sector, val]) => {
         const ratio = totalAssets > 0 ? (val / totalAssets) * 100 : 0;
-        if (ratio > maxSector.ratio) {
-          maxSector = { name: sector, ratio };
-        }
+        if (ratio > maxSector.ratio) maxSector = { name: sector, ratio };
       });
-
-      return {
-        stockTotal,
-        totalCost,
-        totalAssets,
-        totalPnl,
-        totalPnlPct,
-        cashRatio,
-        sectorMap,
-        maxSector,
-        alerts,
-        dangerCount,
-        warningCount
-      };
+      return { stockTotal, totalCost, totalAssets, totalPnl, totalPnlPct, cashRatio, sectorMap, maxSector, alerts, dangerCount, warningCount };
     }
 
     function checkCashRatioAlert(summary) {
       if (!summary) summary = evaluatePortfolio();
       const isBelowTen = summary.cashRatio < 10.0;
-
       if (isBelowTen && !wasCashBelowTenPercent) {
         const requiredCash = summary.totalAssets * 0.10;
         const shortage = Math.max(0, requiredCash - cashBalance);
-
         const detailEl = document.getElementById('cash-alert-detail');
         if (detailEl) {
           detailEl.innerHTML = `
-            <div class="flex justify-between">
-              <span class="text-cyan-300/70">現在の総資産評価額</span>
-              <span class="font-bold font-mono-num text-white">${(summary.totalAssets / 10000).toFixed(1)} 万円</span>
-            </div>
-            <div class="flex justify-between">
-              <span class="text-cyan-300/70">現在の待機資金（現金）</span>
-              <span class="font-bold font-mono-num text-rose-400">${(cashBalance / 10000).toFixed(1)} 万円（${summary.cashRatio.toFixed(1)}%）</span>
-            </div>
-            <div class="flex justify-between border-t border-amber-500/25 pt-2">
-              <span class="text-cyan-300/70">安全ライン（10%）に必要な現金</span>
-              <span class="font-bold font-mono-num text-amber-300">${(requiredCash / 10000).toFixed(1)} 万円（あと +${(shortage / 10000).toFixed(1)}万円 不足）</span>
-            </div>
-          `;
-        }
-        const modalEl = document.getElementById('cash-alert-modal');
-        if (modalEl) modalEl.classList.remove('hidden');
-      }
-
-      wasCashBelowTenPercent = isBelowTen;
-    }
-
-    function closeCashAlertModal() {
-      const modalEl = document.getElementById('cash-alert-modal');
-      if (modalEl) modalEl.classList.add('hidden');
-    }
-
-    function formatYen(num) {
-      return '¥' + Math.round(num).toLocaleString('ja-JP');
-    }
-
-    function renderAll() {
-      const summary = evaluatePortfolio();
-
-      document.getElementById('kpi-total-assets').textContent = formatYen(summary.totalAssets);
-      const pnlSign = summary.totalPnl >= 0 ? '+' : '';
-      const pnlColor = summary.totalPnl >= 0 ? 'text-emerald-300 neon-text-emerald' : 'text-rose-400 neon-text-rose';
-      document.getElementById('kpi-total-pnl').innerHTML = `
-        <span class="${pnlColor} font-bold font-mono-num">${pnlSign}${formatYen(summary.totalPnl)} (${pnlSign}${summary.totalPnlPct.toFixed(2)}%)</span>
-        <span class="text-cyan-300/60">評価損益</span>
-      `;
-
-      document.getElementById('kpi-cash').textContent = formatYen(cashBalance);
-      const cashStatusColor = summary.cashRatio >= 10 ? 'text-cyan-200/70' : 'text-amber-300 font-bold';
-      document.getElementById('kpi-cash-ratio').className = `text-xs mt-1.5 ${cashStatusColor}`;
-      document.getElementById('kpi-cash-ratio').textContent = `資産比率: ${summary.cashRatio.toFixed(1)}%（目安10%以上維持）`;
-
-      const ruleStatusEl = document.getElementById('kpi-rule-status');
-      if (summary.dangerCount > 0) {
-        ruleStatusEl.className = 'text-lg font-bold text-rose-400 neon-text-rose flex items-center gap-1.5';
-        ruleStatusEl.innerHTML = `<span>⚠️ 損切りアラート ${summary.dangerCount}件</span>`;
-      } else if (summary.warningCount > 0) {
-        ruleStatusEl.className = 'text-lg font-bold text-amber-300 flex items-center gap-1.5';
-        ruleStatusEl.innerHTML = `<span>注意監視銘柄 ${summary.warningCount}件</span>`;
-      } else {
-        ruleStatusEl.className = 'text-lg font-bold text-emerald-300 neon-text-emerald flex items-center gap-1.5';
-        ruleStatusEl.innerHTML = `<span>全銘柄 -10%防衛ライン内</span>`;
-      }
-
-      document.getElementById('kpi-max-sector').textContent = `最大業種比率: ${summary.maxSector.name} ${summary.maxSector.ratio.toFixed(1)}%`;
-
-      const stanceEl = document.getElementById('kpi-ai-stance');
-      if (summary.dangerCount > 0) {
-        stanceEl.textContent = '防御優先・損切り実行フェーズ';
-        stanceEl.className = 'text-lg font-bold text-rose-400';
-      } else if (summary.cashRatio < 10) {
-        stanceEl.textContent = '現金余力回復待ち（買い停止）';
-        stanceEl.className = 'text-lg font-bold text-amber-300';
-      } else {
-        stanceEl.textContent = '押し目買い待機・分散維持';
-        stanceEl.className = 'text-lg font-bold text-cyan-300 neon-text-cyan';
-      }
-
-      const restoreBtn = document.getElementById('restore-deleted-btn');
-      if (restoreBtn) {
-        if (deletedHoldingsHistory.length > 0) {
-          const last = deletedHoldingsHistory[deletedHoldingsHistory.length - 1];
-          restoreBtn.classList.remove('hidden');
-          restoreBtn.innerHTML = `<span>↩️ 「${last.stock.name}」を復元</span>`;
-        } else {
-          restoreBtn.classList.add('hidden');
-        }
-      }
-
-      renderGuardrails(summary);
-      renderHoldingsList();
-      renderDetailPanel(summary);
-      renderRecommendedStocks(summary);
-      renderAllocationChart(summary);
-      renderPnlHistoryChart(summary);
-    }
-
-    function renderGuardrails(summary) {
-      const container = document.getElementById('guardrail-list');
-      const items = [
-        {
-          title: '① 機械的ロスカット (-10%基準)',
-          ok: summary.dangerCount === 0,
-          desc: summary.dangerCount === 0
-            ? '全保有銘柄が-10%防衛ライン内で推移中。感情的な塩漬けリスクなし。'
-            : `${summary.dangerCount}銘柄が-10%を割り込みました。即座に損切り売却を検討してください。`
-        },
-        {
-          title: '② 1銘柄集中上限 (15%以下)',
-          ok: holdings.every(h => h.isSellTest || h.weight <= 15.0),
-          desc: holdings.every(h => h.isSellTest || h.weight <= 15.0)
-            ? 'すべての銘柄が総資産の15%以内に分散されています。'
-            : '一部銘柄（VOO等）が15%を超過中。新規資金は他銘柄へ配分して平準化しましょう。'
-        },
-        {
-          title: '③ 1業種セクター上限 (30%以下)',
-          ok: summary.maxSector.ratio <= 30.0,
-          desc: `最大業種は「${summary.maxSector.name} (${summary.maxSector.ratio.toFixed(1)}%)」。30%上限内で適切に分散されています。`
-        },
-        {
-          title: '④ 暴落時の買い増し現金余力 (10%以上)',
-          ok: summary.cashRatio >= 10.0,
-          desc: summary.cashRatio >= 10.0
-            ? `待機資金 ${summary.cashRatio.toFixed(1)}%（${(cashBalance/10000).toFixed(0)}万円）を確保。急落時の押し目買いが可能。`
-            : `待機資金が ${summary.cashRatio.toFixed(1)}% に低下中。これ以上の買い増しは控えましょう。`
-        }
-      ];
-
-      container.innerHTML = items.map(g => `
-        <div class="flex items-start gap-2.5 p-3 rounded-xl border ${g.ok ? 'bg-[#040c18]/90 border-cyan-500/25' : 'bg-rose-950/35 border-rose-500/50'}">
-          <span class="mt-0.5 text-sm">${g.ok ? '✅' : '⚠️'}</span>
-          <div>
-            <div class="font-bold ${g.ok ? 'text-cyan-50' : 'text-rose-200'}">${g.title}</div>
-            <div class="text-cyan-200/70 mt-0.5 leading-relaxed">${g.desc}</div>
-          </div>
-        </div>
-      `).join('');
-    }
-
-    function renderHoldingsList() {
-      const countBadge = document.getElementById('holdings-count-badge');
-      if (countBadge) countBadge.textContent = `全 ${holdings.length} 銘柄`;
-
-      const container = document.getElementById('holdings-list');
-      container.innerHTML = holdings.map(item => {
-        const isSelected = selectedStockId === item.id;
-        const pnlSign = item.pnl >= 0 ? '+' : '';
-        const pnlTextClass = item.pnl >= 0 ? 'text-emerald-300' : 'text-rose-400';
-
-        let badgeClass = 'bg-emerald-500/15 text-emerald-300 border-emerald-400/40';
-        let cardBorderClass = isSelected
-          ? 'border-cyan-400 bg-cyan-950/30 shadow-[0_0_20px_rgba(0,240,255,0.2)]'
-          : 'border-cyan-500/25 bg-[#040c18]/90 hover:border-cyan-400/60';
-
-        if (item.isSellTest) {
-          badgeClass = 'bg-slate-800 text-cyan-200/70 border-cyan-500/30';
-          cardBorderClass = 'border-dashed border-cyan-500/40 bg-[#030712]/70 opacity-75';
-        } else if (item.status === 'danger') {
-          badgeClass = 'bg-rose-500/25 text-rose-200 border-rose-400/60';
-          cardBorderClass = 'border-rose-500 bg-rose-950/30 danger-pulse';
-        } else if (item.status === 'warning') {
-          badgeClass = 'bg-amber-500/20 text-amber-200 border-amber-400/50';
-          cardBorderClass = isSelected ? 'border-amber-400 bg-amber-950/25' : 'border-amber-500/40 bg-[#040c18]/90';
-        } else if (item.status === 'take_profit') {
-          badgeClass = 'bg-cyan-500/20 text-cyan-200 border-cyan-400/50';
-        }
-
-        const actionButtonsHtml = item.isTestAdd ? `
-          <div class="flex flex-wrap items-center gap-1.5 ml-auto">
-            <button onclick="event.stopPropagation(); confirmBuyFromTest('${item.id}')" class="px-2.5 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-[11px] shadow-[0_0_12px_rgba(0,255,157,0.3)] transition">
-              ✅ 購入確定（本組入）
-            </button>
-            <button onclick="event.stopPropagation(); removeHoldingTest('${item.id}')" class="px-2.5 py-1 rounded-lg bg-slate-900 hover:bg-rose-950/60 text-cyan-200 hover:text-rose-200 border border-cyan-500/30 text-[11px] transition">
-              組入テスト解除
-            </button>
-          </div>
-        ` : item.isSellTest ? `
-          <div class="flex flex-wrap items-center gap-1.5 ml-auto">
-            <button onclick="event.stopPropagation(); toggleSellTest('${item.id}')" class="px-2.5 py-1 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-[11px] shadow-[0_0_12px_rgba(0,240,255,0.3)] transition">
-              ↩️ 売却テスト解除（戻す）
-            </button>
-            <button onclick="event.stopPropagation(); confirmSellDelete('${item.id}')" class="px-2.5 py-1 rounded-lg bg-rose-950/70 hover:bg-rose-900 text-rose-200 border border-rose-500/50 text-[11px] transition">
-              🗑️ 売却削除
-            </button>
-          </div>
-        ` : `
-          <div class="flex flex-wrap items-center gap-1.5 ml-auto">
-            <button onclick="event.stopPropagation(); toggleSellTest('${item.id}')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/50 text-[11px] transition">
-              売却テスト
-            </button>
-            <button onclick="event.stopPropagation(); confirmSellDelete('${item.id}')" class="px-2.5 py-1 rounded-lg bg-rose-950/70 hover:bg-rose-900 text-rose-200 border border-rose-500/50 text-[11px] transition">
-              🗑️ 売却削除
-            </button>
-          </div>
-        `;
-
-        return `
-          <div onclick="selectStock('${item.id}')" class="shrink-0 w-[86%] sm:w-[440px] snap-start flex flex-col justify-between cursor-pointer rounded-2xl border p-3.5 transition-all shadow-md overflow-hidden ${cardBorderClass}">
-            <div class="space-y-2">
-              <div class="flex items-center justify-between gap-2">
-                <span class="text-[11px] font-medium px-2.5 py-0.5 rounded-full border ${badgeClass} truncate">
-                  ${item.statusLabel}
-                </span>
-                ${item.isTestAdd ? '<span class="text-[10px] px-2 py-0.5 rounded-full bg-fuchsia-500/25 text-fuchsia-200 border border-fuchsia-400/50 shrink-0">組入テスト中</span>' : ''}
-              </div>
-
-              <div class="flex items-baseline gap-1.5 min-w-0">
-                <span class="font-bold text-sm sm:text-base text-white truncate">${item.name}</span>
-                <span class="text-xs font-mono-num text-cyan-300/80 shrink-0">(${item.ticker})</span>
-              </div>
-
-              <div class="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[11px] text-cyan-200/80 font-mono-num">
-                <span class="font-sans text-cyan-300 font-medium">${item.sector}</span>
-                <span>• 比率 ${item.weight.toFixed(1)}%</span>
-                <span>• 配当 ${item.dividendYield}%</span>
-              </div>
-
-              <div class="flex items-baseline justify-between gap-2 pt-1.5 border-t border-cyan-500/15 font-mono-num">
-                <span class="font-bold text-sm sm:text-base text-white ${item.isSellTest ? 'line-through text-cyan-400/40' : ''}">${formatYen(item.currentValue)}</span>
-                <span class="text-xs font-semibold ${item.isSellTest ? 'text-cyan-300/60' : pnlTextClass}">
-                  ${item.isSellTest ? '売却仮定中' : `${pnlSign}${formatYen(item.pnl)} (${pnlSign}${item.pnlPct.toFixed(1)}%)`}
-                </span>
-              </div>
-            </div>
-
-            <div class="mt-2.5 pt-2.5 border-t border-cyan-500/20 space-y-2 text-[11px]">
-              <div class="flex items-center gap-1 overflow-x-auto">
-                <span class="text-cyan-300/70 shrink-0 mr-0.5">試算:</span>
-                <button onclick="event.stopPropagation(); simulatePriceChange('${item.id}', -0.05)" class="px-1.5 py-1 rounded bg-rose-950/70 hover:bg-rose-900 text-rose-200 border border-rose-500/40 font-mono-num shrink-0 transition">-5%</button>
-                <button onclick="event.stopPropagation(); simulatePriceChange('${item.id}', -0.01)" class="px-1.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-cyan-100 border border-cyan-500/30 font-mono-num shrink-0 transition">-1%</button>
-                <button onclick="event.stopPropagation(); simulatePriceChange('${item.id}', 0.01)" class="px-1.5 py-1 rounded bg-slate-900 hover:bg-slate-800 text-cyan-100 border border-cyan-500/30 font-mono-num shrink-0 transition">+1%</button>
-                <button onclick="event.stopPropagation(); simulatePriceChange('${item.id}', 0.05)" class="px-1.5 py-1 rounded bg-emerald-950/70 hover:bg-emerald-900 text-emerald-200 border border-emerald-500/40 font-mono-num shrink-0 transition">+5%</button>
-                <button onclick="event.stopPropagation(); resetSingleStockPrice('${item.id}')" class="px-2 py-1 rounded bg-cyan-950/70 hover:bg-cyan-900 text-cyan-200 border border-cyan-400/40 shrink-0 transition">↺ 元値</button>
-              </div>
-              <div class="flex items-center justify-end">
-                ${actionButtonsHtml}
-              </div>
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function renderDetailPanel(summary) {
-      const titleEl = document.getElementById('detail-title');
-      const badgeEl = document.getElementById('detail-badge');
-      const contentEl = document.getElementById('detail-content');
-
-      if (!selectedStockId) {
-        titleEl.textContent = 'AI総合判断＆ポートフォリオ戦略';
-        badgeEl.textContent = summary.dangerCount > 0 ? '要・損切り対応' : '鉄壁分散稼働中';
-        badgeEl.className = summary.dangerCount > 0
-          ? 'text-xs px-2.5 py-1 rounded-full font-semibold bg-rose-500/20 text-rose-300 border border-rose-400/50'
-          : 'text-xs px-2.5 py-1 rounded-full font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-400/50';
-
-        contentEl.innerHTML = `
-          <div class="flex items-start gap-2.5">
-            <span class="text-base">🧭</span>
-            <div>
-              <div class="font-bold text-cyan-100">本日のAI参謀サマリー</div>
-              <p class="text-cyan-200/80 mt-1">
-                総資産は <strong class="text-white font-mono-num">${formatYen(summary.totalAssets)}</strong>（評価損益 <strong class="${summary.totalPnl >= 0 ? 'text-emerald-300' : 'text-rose-400'} font-mono-num">${summary.totalPnl >= 0 ? '+' : ''}${formatYen(summary.totalPnl)}</strong>）。
-                現在、金融（${summary.maxSector.ratio.toFixed(1)}%）と米国大型株が資産を牽引しています。
-              </p>
-            </div>
-          </div>
-          <div class="flex items-start gap-2.5 pt-2.5 border-t border-cyan-500/20">
-            <span class="text-base">💡</span>
-            <div>
-              <div class="font-bold text-emerald-300">次のアクション提案</div>
-              <p class="text-cyan-200/80 mt-1">
-                いずれかの銘柄カードをクリックすると、その銘柄専用の「過去推移グラフ・最新ニュース要因・AI売買判断」に切り替わります。また下の「AI買い時おすすめ株」から推奨枠または任意金額で組み入れテストが可能です。
-              </p>
-            </div>
-          </div>
-        `;
-        return;
-      }
-
-      const item = holdings.find(h => h.id === selectedStockId);
-      if (!item) {
-        selectedStockId = null;
-        renderDetailPanel(summary);
-        return;
-      }
-
-      titleEl.textContent = `${item.name} (${item.ticker}) のAI詳細分析`;
-      badgeEl.textContent = item.statusLabel;
-      badgeEl.className = item.status === 'danger'
-        ? 'text-xs px-2.5 py-1 rounded-full font-semibold bg-rose-500/20 text-rose-300 border border-rose-400/50'
-        : item.status === 'warning'
-        ? 'text-xs px-2.5 py-1 rounded-full font-semibold bg-amber-500/20 text-amber-300 border border-amber-400/50'
-        : 'text-xs px-2.5 py-1 rounded-full font-semibold bg-cyan-500/20 text-cyan-300 border border-cyan-400/50';
-
-      contentEl.innerHTML = `
-        <div class="grid grid-cols-3 gap-2 bg-[#02060f] p-3 rounded-xl border border-cyan-500/25 text-xs font-mono-num">
-          <div>
-            <span class="text-cyan-300/70 font-sans block">取得元本</span>
-            <span class="font-bold text-white">${formatYen(item.costBasis)}</span>
-          </div>
-          <div>
-            <span class="text-cyan-300/70 font-sans block">現在評価額</span>
-            <span class="font-bold text-white">${formatYen(item.currentValue)}</span>
-          </div>
-          <div>
-            <span class="text-cyan-300/70 font-sans block">損切り防衛ライン(-10%)</span>
-            <span class="font-bold text-rose-400">${formatYen(item.costBasis * 0.9)}</span>
-          </div>
-        </div>
-        <div>
-          <div class="text-xs font-bold text-fuchsia-300 mb-1">📈 過去の値動き傾向</div>
-          <p class="text-cyan-100/85 text-xs leading-relaxed">${item.trendSummary}</p>
-        </div>
-        <div>
-          <div class="text-xs font-bold text-cyan-300 mb-1">📰 最新ニュース・ファンダメンタルズ要因</div>
-          <p class="text-cyan-100/85 text-xs leading-relaxed">${item.newsSummary}</p>
-        </div>
-        <div class="bg-cyan-950/40 border border-cyan-400/35 rounded-xl p-3">
-          <div class="text-xs font-bold text-emerald-300 mb-1">🤖 AI投資参謀の最終判断</div>
-          <p class="text-cyan-50 text-xs leading-relaxed">${item.aiComment}</p>
-        </div>
-      `;
-    }
-
-    function setRecAmountMode(recId, mode) {
-      const rec = RECOMMENDED_CANDIDATES.find(r => r.id === recId);
-      if (!rec) return;
-
-      if (!recCustomAmounts[recId]) {
-        recCustomAmounts[recId] = { mode: 'recommended', customAmount: rec.recommendedAmount };
-      }
-      recCustomAmounts[recId].mode = mode;
-
-      const appliedAmount = mode === 'recommended' ? rec.recommendedAmount : recCustomAmounts[recId].customAmount;
-      const existingTest = holdings.find(h => h.id === rec.id && h.isTestAdd);
-      if (existingTest) {
-        existingTest.costBasis = appliedAmount;
-        existingTest.currentValue = appliedAmount;
-        const summary = evaluatePortfolio();
-        renderAll();
-        checkCashRatioAlert(summary);
-      } else {
-        renderRecommendedStocks(evaluatePortfolio());
-      }
-    }
-
-    function updateRecCustomAmount(recId, valStr) {
-      const rec = RECOMMENDED_CANDIDATES.find(r => r.id === recId);
-      if (!rec) return;
-
-      const manYen = Math.max(1, Number(valStr) || 1);
-      const yen = Math.round(manYen * 10000);
-
-      recCustomAmounts[recId] = {
-        mode: 'custom',
-        customAmount: yen
-      };
-
-      const existingTest = holdings.find(h => h.id === rec.id && h.isTestAdd);
-      if (existingTest) {
-        existingTest.costBasis = yen;
-        existingTest.currentValue = yen;
-        const summary = evaluatePortfolio();
-        renderAll();
-        checkCashRatioAlert(summary);
-      } else {
-        const summary = evaluatePortfolio();
-        const postWeight = summary.totalAssets > 0 ? (yen / summary.totalAssets) * 100 : 0;
-        const hintEl = document.getElementById(`rec-ratio-hint-${recId}`);
-        if (hintEl) {
-          const isOver = postWeight > 15.0;
-          hintEl.className = `text-[10px] mt-1 font-mono-num ${isOver ? 'text-amber-300 font-bold' : 'text-cyan-300/75'}`;
-          hintEl.textContent = `組入後の資産比率: ${postWeight.toFixed(1)}% ${isOver ? '（⚠️ 15%上限超過）' : '（15%上限内で適正）'}`;
-        }
-      }
-    }
-
-    function renderRecommendedStocks(summary) {
-      const container = document.getElementById('recommended-stocks-list');
-      container.innerHTML = RECOMMENDED_CANDIDATES.map(rec => {
-        const isAdded = holdings.some(h => h.id === rec.id);
-        const state = recCustomAmounts[rec.id] || { mode: 'recommended', customAmount: rec.recommendedAmount };
-        const activeAmount = state.mode === 'recommended' ? rec.recommendedAmount : state.customAmount;
-        const postWeight = summary && summary.totalAssets > 0 ? (activeAmount / summary.totalAssets) * 100 : 0;
-        const isOverWeight = postWeight > 15.0;
-
-        return `
-          <div class="shrink-0 w-[88%] sm:w-[360px] snap-start bg-[#040c18]/95 border border-emerald-500/30 rounded-xl p-4 flex flex-col justify-between space-y-3 shadow-md">
-            <div class="space-y-2">
-              <div class="flex items-start justify-between gap-2">
-                <div>
-                  <div class="font-bold text-sm text-white">${rec.name} <span class="text-xs text-cyan-300/75 font-mono-num font-normal">(${rec.ticker})</span></div>
-                  <div class="text-[11px] text-cyan-200/70 mt-0.5">${rec.sector} • 予想配当 <strong class="text-emerald-300 font-mono-num">${rec.dividendYield}%</strong></div>
-                </div>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-200 border border-emerald-400/40 shrink-0">
-                  買い時シグナル
-                </span>
-              </div>
-
-              <div class="text-[11px] font-medium text-amber-300 bg-amber-500/15 border border-amber-400/30 rounded-lg px-2.5 py-1">
-                🎯 ${rec.buySignal}
-              </div>
-
-              <p class="text-[11px] text-cyan-100/80 leading-relaxed">
-                <strong class="text-cyan-200">過去傾向:</strong> ${rec.pastPattern}
-              </p>
-              <p class="text-[11px] text-cyan-200/65 leading-relaxed">
-                ${rec.reason}
-              </p>
-            </div>
-
-            <div class="pt-2.5 border-t border-cyan-500/20 space-y-2">
-              <div class="flex items-center justify-between gap-1 text-[11px]">
-                <span class="text-cyan-300/75">投資枠設定:</span>
-                <div class="flex items-center gap-1 bg-[#02060f] p-0.5 rounded-lg border border-cyan-500/30">
-                  <button type="button" onclick="setRecAmountMode('${rec.id}', 'recommended')" class="px-2 py-0.5 rounded text-[10px] transition font-mono-num ${state.mode === 'recommended' ? 'bg-emerald-500 text-slate-950 font-bold' : 'text-cyan-200/70 hover:text-white'}">
-                    推奨 (${(rec.recommendedAmount / 10000).toFixed(0)}万)
-                  </button>
-                  <button type="button" onclick="setRecAmountMode('${rec.id}', 'custom')" class="px-2 py-0.5 rounded text-[10px] transition ${state.mode === 'custom' ? 'bg-cyan-500 text-slate-950 font-bold' : 'text-cyan-200/70 hover:text-white'}">
-                    任意金額
-                  </button>
-                </div>
-              </div>
-
-              ${state.mode === 'custom' ? `
-                <div class="bg-[#02060f] border border-cyan-500/35 rounded-lg p-2">
-                  <div class="flex items-center justify-between gap-2">
-                    <label class="text-[11px] text-cyan-200">投資額を入力:</label>
-                    <div class="flex items-center gap-1">
-                      <input type="number" min="1" max="500" step="1"
-                        value="${Math.round(state.customAmount / 10000)}"
-                        oninput="updateRecCustomAmount('${rec.id}', this.value)"
-                        class="w-20 bg-[#050d1c] border border-cyan-400/50 rounded px-2 py-1 text-right text-xs text-white font-mono-num font-bold focus:outline-none focus:border-cyan-300">
-                      <span class="text-xs text-cyan-200">万円</span>
-                    </div>
-                  </div>
-                  <div id="rec-ratio-hint-${rec.id}" class="text-[10px] mt-1 font-mono-num ${isOverWeight ? 'text-amber-300 font-bold' : 'text-cyan-300/75'}">
-                    組入後の資産比率: ${postWeight.toFixed(1)}% ${isOverWeight ? '（⚠️ 15%上限超過）' : '（15%上限内で適正）'}
-                  </div>
-                </div>
-              ` : `
-                <div class="text-[10px] text-cyan-300/75 flex justify-between font-mono-num">
-                  <span>AI推奨投資枠: <strong class="text-emerald-300">${(rec.recommendedAmount / 10000).toFixed(0)}万円</strong></span>
-                  <span>組入比率目安: ${postWeight.toFixed(1)}%</span>
-                </div>
-              `}
-
-              ${isAdded ? `
-                <div class="flex items-center gap-1.5">
-                  <button onclick="adoptRecommendedStock('${rec.id}')" class="flex-1 py-2 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-[0_0_12px_rgba(0,255,157,0.3)] transition">
-                    ✅ 購入確定（本組入）
-                  </button>
-                  <button onclick="toggleRecommendedStock('${rec.id}')" class="px-2.5 py-2 rounded-lg text-xs font-medium bg-slate-900 hover:bg-slate-800 text-cyan-200 border border-cyan-500/30 transition">
-                    テスト解除
-                  </button>
-                </div>
-              ` : `
-                <div class="flex items-center gap-1.5">
-                  <button onclick="toggleRecommendedStock('${rec.id}')" class="flex-1 py-2 rounded-lg text-xs font-medium bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-400/50 transition">
-                    ＋ 組入テストする
-                  </button>
-                  <button onclick="adoptRecommendedStock('${rec.id}')" class="px-3 py-2 rounded-lg text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-[0_0_12px_rgba(0,255,157,0.3)] transition" title="実際に購入した場合はこちら">
-                    ✅ 本組入
-                  </button>
-                </div>
-              `}
-            </div>
-          </div>
-        `;
-      }).join('');
-    }
-
-    function renderAllocationChart(summary) {
-      const canvas = document.getElementById('allocationChart');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      const labels = [...Object.keys(summary.sectorMap), '待機資金(現金)'];
-      const dataValues = [...Object.values(summary.sectorMap), cashBalance];
-      const colors = ['#00f0ff', '#b829ff', '#00ff9d', '#ffb800', '#ff3b6b', '#38bdf8', '#64748b'];
-
-      const legendEl = document.getElementById('allocation-legend');
-      if (legendEl) {
-        legendEl.innerHTML = labels.map((label, idx) => {
-          const val = dataValues[idx];
-          const pct = summary.totalAssets > 0 ? (val / summary.totalAssets) * 100 : 0;
-          const color = colors[idx % colors.length];
-          return `
-            <div class="flex items-center justify-between gap-2 min-w-0">
-              <div class="flex items-center gap-1.5 min-w-0 flex-1">
-                <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background-color:${color}; box-shadow: 0 0 8px ${color};"></span>
-                <span class="text-cyan-100 truncate">${label}</span>
-              </div>
-              <span class="font-bold font-mono-num text-white shrink-0">${pct.toFixed(1)}%</span>
-            </div>
-          `;
-        }).join('');
-      }
-
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.parentElement.getBoundingClientRect();
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-      ctx.clearRect(0, 0, rect.width, rect.height);
-
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const radius = Math.min(cx, cy) - 6;
-      const innerRadius = radius * 0.62;
-      const total = dataValues.reduce((a, b) => a + b, 0);
-
-      let startAngle = -Math.PI / 2;
-      dataValues.forEach((val, idx) => {
-        if (val <= 0 || total <= 0) return;
-        const sliceAngle = (val / total) * Math.PI * 2;
-        ctx.beginPath();
-        ctx.arc(cx, cy, radius, startAngle, startAngle + sliceAngle);
-        ctx.arc(cx, cy, innerRadius, startAngle + sliceAngle, startAngle, true);
-        ctx.closePath();
-        ctx.fillStyle = colors[idx % colors.length];
-        ctx.fill();
-        startAngle += sliceAngle;
-      });
-    }
-
-    function setPnlTimeframe(tf) {
-      currentTimeframe = tf;
-      ['1M', '6M', '1Y', 'ALL'].forEach(t => {
-        const btn = document.getElementById(`tf-${t}`);
-        if (!btn) return;
-        if (t === tf) {
-          btn.className = 'px-2 py-0.5 text-[11px] rounded bg-fuchsia-600 text-white font-medium shadow-[0_0_10px_rgba(184,41,255,0.4)] transition';
-        } else {
-          btn.className = 'px-2 py-0.5 text-[11px] rounded text-cyan-300/70 hover:text-white transition';
-        }
-      });
-      renderPnlHistoryChart(evaluatePortfolio());
-    }
-
-    function renderPnlHistoryChart(summary) {
-      const canvas = document.getElementById('pnlHistoryChart');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-
-      const titleEl = document.getElementById('pnl-chart-title');
-      const badgeEl = document.getElementById('pnl-chart-mode-badge');
-      const trendEl = document.getElementById('pnl-trend-summary');
-      const resetBtn = document.getElementById('reset-chart-scope-btn');
-
-      let series = [];
-      let baseCost = 0;
-
-      if (selectedStockId) {
-        const item = holdings.find(h => h.id === selectedStockId);
-        if (item) {
-          titleEl.textContent = `${item.name} の評価額推移`;
-          badgeEl.textContent = item.ticker;
-          resetBtn.classList.remove('hidden');
-          const hist = item.history1Y || [item.costBasis / 10000, item.currentValue / 10000];
-          series = [...hist.slice(0, -1), item.currentValue / 10000];
-          baseCost = item.costBasis / 10000;
-        }
-      } else {
-        titleEl.textContent = '全体・資産＆損益推移';
-        badgeEl.textContent = '全銘柄合計';
-        resetBtn.classList.add('hidden');
-        const activeHoldings = holdings.filter(h => !h.isSellTest);
-        const len = 12;
-        series = Array.from({ length: len }, (_, i) => {
-          if (i === len - 1) return summary.stockTotal / 10000;
-          return activeHoldings.reduce((acc, h) => {
-            const arr = h.history1Y || Array(len).fill(h.currentValue / 10000);
-            return acc + (arr[i] || h.currentValue / 10000);
-          }, 0);
-        });
-        baseCost = summary.totalCost / 10000;
-      }
-
-      if (currentTimeframe === '1M') {
-        series = series.slice(-4);
-      } else if (currentTimeframe === '6M') {
-        series = series.slice(-6);
-      } else if (currentTimeframe === 'ALL') {
-        series = [baseCost * 0.88, baseCost * 0.94, ...series];
-      }
-
-      const startVal = series[0] || 1;
-      const endVal = series[series.length - 1] || 1;
-      const diffPct = ((endVal - startVal) / startVal) * 100;
-      trendEl.textContent = `表示期間の変化率: ${diffPct >= 0 ? '+' : ''}${diffPct.toFixed(2)}%（現在 ${endVal.toFixed(1)}万円）`;
-
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.parentElement.getBoundingClientRect();
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-      ctx.scale(dpr, dpr);
-
-      const w = rect.width;
-      const h = rect.height;
-      const padL = 42, padR = 12, padT = 14, padB = 22;
-      const plotW = w - padL - padR;
-      const plotH = h - padT - padB;
-
-      ctx.clearRect(0, 0, w, h);
-
-      const minVal = Math.min(...series, baseCost) * 0.97;
-      const maxVal = Math.max(...series, baseCost) * 1.03;
-      const range = Math.max(1, maxVal - minVal);
-
-      ctx.strokeStyle = 'rgba(0, 240, 255, 0.12)';
-      ctx.lineWidth = 1;
-      for (let i = 0; i <= 3; i++) {
-        const y = padT + (plotH / 3) * i;
-        ctx.beginPath();
-        ctx.moveTo(padL, y);
-        ctx.lineTo(w - padR, y);
-        ctx.stroke();
-
-        const labelVal = maxVal - (range / 3) * i;
-        ctx.fillStyle = '#7dd3fc';
-        ctx.font = '10px JetBrains Mono, monospace';
-        ctx.textAlign = 'right';
-        ctx.fillText(`${Math.round(labelVal)}万`, padL - 6, y + 3);
-      }
-
-      const costY = padT + plotH - ((baseCost - minVal) / range) * plotH;
-      if (costY >= padT && costY <= padT + plotH) {
-        ctx.save();
-        ctx.setLineDash([4, 4]);
-        ctx.strokeStyle = 'rgba(255, 184, 0, 0.55)';
-        ctx.beginPath();
-        ctx.moveTo(padL, costY);
-        ctx.lineTo(w - padR, costY);
-        ctx.stroke();
-        ctx.restore();
-      }
-
-      const points = series.map((val, idx) => ({
-        x: padL + (series.length > 1 ? (plotW / (series.length - 1)) * idx : plotW / 2),
-        y: padT + plotH - ((val - minVal) / range) * plotH
-      }));
-
-      const lineColor = endVal >= baseCost ? '#00ff9d' : '#ff3b6b';
-      const grad = ctx.createLinearGradient(0, padT, 0, padT + plotH);
-      grad.addColorStop(0, endVal >= baseCost ? 'rgba(0, 255, 157, 0.28)' : 'rgba(255, 59, 107, 0.28)');
-      grad.addColorStop(1, 'rgba(3, 7, 17, 0.0)');
-
-      ctx.beginPath();
-      points.forEach((pt, idx) => {
-        if (idx === 0) ctx.moveTo(pt.x, pt.y);
-        else ctx.lineTo(pt.x, pt.y);
-      });
-      ctx.lineTo(points[points.length - 1].x, padT + plotH);
-      ctx.lineTo(points[0].x, padT + plotH);
-      ctx.closePath();
-      ctx.fillStyle = grad;
-      ctx.fill();
-
-      ctx.beginPath();
-      points.forEach((pt, idx) => {
-        if (idx === 0) ctx.moveTo(pt.x, pt.y);
-        else ctx.lineTo(pt.x, pt.y);
-      });
-      ctx.strokeStyle = lineColor;
-      ctx.lineWidth = 2.5;
-      ctx.shadowColor = lineColor;
-      ctx.shadowBlur = 8;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      points.forEach((pt, idx) => {
-        ctx.beginPath();
-        ctx.arc(pt.x, pt.y, idx === points.length - 1 ? 4 : 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = idx === points.length - 1 ? '#ffffff' : lineColor;
-        ctx.fill();
-      });
-    }
-
-    function toggleMacroDetail() {
-      const detail = document.getElementById('macro-detail-mobile');
-      const label = document.getElementById('macro-toggle-label');
-      if (!detail || !label) return;
-      const isHidden = detail.classList.contains('hidden');
-      if (isHidden) {
-        detail.classList.remove('hidden');
-        label.textContent = '閉じる ▲';
-      } else {
-        detail.classList.add('hidden');
-        label.textContent = '詳細 ▼';
-      }
-    }
-
-    function selectStock(id) {
-      selectedStockId = id;
-      renderAll();
-    }
-
-    function simulatePriceChange(id, pctDelta) {
-      const item = holdings.find(h => h.id === id);
-      if (!item || item.isSellTest) return;
-
-      item.currentValue = Math.max(10000, Math.round(item.currentValue * (1 + pctDelta)));
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-
-      if (item.pnlPct <= -10.0) {
-        addLineMessage('bot', `🚨【緊急ロスカット通知】\n${item.name}（${item.ticker}）が含み損 ${item.pnlPct.toFixed(1)}% となり、防衛ライン（-10%）を突破しました！\n感情を挟まず機械的な損切りを推奨します。`);
-      }
-    }
-
-    function resetSingleStockPrice(id) {
-      const item = holdings.find(h => h.id === id);
-      if (!item) return;
-
-      const initialItem = INITIAL_HOLDINGS.find(h => h.id === id);
-      if (initialItem) {
-        item.currentValue = initialItem.currentValue;
-      } else {
-        item.currentValue = item.costBasis;
-      }
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`「${item.name}」の評価額を初期値に戻しました`);
-    }
-
-    function toggleSellTest(id) {
-      const item = holdings.find(h => h.id === id);
-      if (!item) return;
-
-      if (!item.isSellTest) {
-        item.isSellTest = true;
-        cashBalance += item.currentValue;
-        showToast(`「${item.name}」を売却テスト中にしました（現金 +${(item.currentValue / 10000).toFixed(1)}万円）`);
-      } else {
-        item.isSellTest = false;
-        cashBalance = Math.max(0, cashBalance - item.currentValue);
-        showToast(`「${item.name}」の売却テストを解除し、保有状態に戻しました`);
-      }
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-    }
-
-    function confirmSellDelete(id) {
-      const item = holdings.find(h => h.id === id);
-      if (!item) return;
-
-      pendingSellStockId = id;
-      const pnlSign = item.pnl >= 0 ? '+' : '';
-      const pnlColor = item.pnl >= 0 ? 'text-emerald-300' : 'text-rose-400';
-
-      document.getElementById('sell-confirm-body').innerHTML = `
-        <p>以下の銘柄を<strong>売却確定</strong>として保有リストから削除し、売却代金を待機資金（現金）に加算しますか？</p>
-        <div class="bg-[#030812] border border-cyan-500/30 rounded-xl p-3 space-y-1.5 font-mono-num">
-          <div class="flex justify-between">
-            <span class="text-cyan-300/70 font-sans">対象銘柄</span>
-            <span class="font-bold text-white font-sans">${item.name} (${item.ticker})</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-cyan-300/70 font-sans">現金加算額</span>
-            <span class="font-bold text-emerald-300">+${formatYen(item.currentValue)}</span>
-          </div>
-          <div class="flex justify-between">
-            <span class="text-cyan-300/70 font-sans">確定損益</span>
-            <span class="font-bold ${pnlColor}">${pnlSign}${formatYen(item.pnl)} (${pnlSign}${item.pnlPct.toFixed(2)}%)</span>
-          </div>
-        </div>
-        <p class="text-[11px] text-cyan-300/70">※削除後も「↩️ 元に戻す」ボタンからいつでも復元できます。</p>
-      `;
-      document.getElementById('sell-confirm-modal').classList.remove('hidden');
-    }
-
-    function closeSellConfirmModal() {
-      pendingSellStockId = null;
-      document.getElementById('sell-confirm-modal').classList.add('hidden');
-    }
-
-    function executeSellDelete() {
-      if (!pendingSellStockId) return;
-      const idx = holdings.findIndex(h => h.id === pendingSellStockId);
-      if (idx === -1) {
-        closeSellConfirmModal();
-        return;
-      }
-
-      const soldStock = holdings[idx];
-      const wasSellTest = !!soldStock.isSellTest;
-
-      if (!wasSellTest) {
-        cashBalance += soldStock.currentValue;
-      }
-
-      deletedHoldingsHistory.push({
-        stock: JSON.parse(JSON.stringify(soldStock)),
-        cashAdded: soldStock.currentValue
-      });
-
-      holdings.splice(idx, 1);
-      if (selectedStockId === soldStock.id) {
-        selectedStockId = null;
-      }
-
-      closeSellConfirmModal();
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-
-      showToast(`「${soldStock.name}」の売却を確定しました（現金 +${(soldStock.currentValue / 10000).toFixed(1)}万円）`, true);
-      addLineMessage('bot', `💰【売却確定記録】\n「${soldStock.name}」を売却確定（${formatYen(soldStock.currentValue)}）し、待機資金に反映しました。`);
-    }
-
-    function restoreLastDeletedStock() {
-      if (deletedHoldingsHistory.length === 0) return;
-      const last = deletedHoldingsHistory.pop();
-      last.stock.isSellTest = false;
-      holdings.push(last.stock);
-      cashBalance = Math.max(0, cashBalance - last.cashAdded);
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`「${last.stock.name}」を保有銘柄に復元しました！`);
-    }
-
-    function toggleRecommendedStock(recId) {
-      const rec = RECOMMENDED_CANDIDATES.find(r => r.id === recId);
-      if (!rec) return;
-
-      const existingIdx = holdings.findIndex(h => h.id === rec.id);
-      if (existingIdx !== -1) {
-        const removed = holdings[existingIdx];
-        if (!removed.isTestAdd) {
-          cashBalance += removed.costBasis;
-        }
-        holdings.splice(existingIdx, 1);
-        if (selectedStockId === rec.id) selectedStockId = null;
-        const summary = evaluatePortfolio();
-        renderAll();
-        checkCashRatioAlert(summary);
-        showToast(`「${rec.name}」の組入テストを解除しました`);
-        return;
-      }
-
-      const state = recCustomAmounts[rec.id] || { mode: 'recommended', customAmount: rec.recommendedAmount };
-      const investAmount = state.mode === 'recommended' ? rec.recommendedAmount : state.customAmount;
-
-      holdings.push({
-        id: rec.id,
-        name: rec.name,
-        ticker: rec.ticker,
-        sector: rec.sector,
-        costBasis: investAmount,
-        currentValue: investAmount,
-        dividendYield: rec.dividendYield,
-        isTestAdd: true,
-        history1Y: Array(12).fill(investAmount / 10000),
-        trendSummary: rec.pastPattern,
-        newsSummary: rec.buySignal,
-        aiComment: rec.reason
-      });
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`「${rec.name}」（${(investAmount / 10000).toFixed(0)}万円）を組入テストに追加しました`);
-    }
-
-    function adoptRecommendedStock(recId) {
-      const rec = RECOMMENDED_CANDIDATES.find(r => r.id === recId);
-      if (!rec) return;
-
-      const state = recCustomAmounts[rec.id] || { mode: 'recommended', customAmount: rec.recommendedAmount };
-      const investAmount = state.mode === 'recommended' ? rec.recommendedAmount : state.customAmount;
-
-      if (cashBalance < investAmount) {
-        showToast(`⚠️ 待機資金（${(cashBalance / 10000).toFixed(1)}万円）が不足しています`);
-        return;
-      }
-
-      const existing = holdings.find(h => h.id === rec.id);
-      if (existing) {
-        if (existing.isTestAdd) {
-          cashBalance -= existing.costBasis;
-          existing.isTestAdd = false;
-        }
-      } else {
-        cashBalance -= investAmount;
-        holdings.push({
-          id: rec.id,
-          name: rec.name,
-          ticker: rec.ticker,
-          sector: rec.sector,
-          costBasis: investAmount,
-          currentValue: investAmount,
-          dividendYield: rec.dividendYield,
-          isTestAdd: false,
-          history1Y: Array(12).fill(investAmount / 10000),
-          trendSummary: rec.pastPattern,
-          newsSummary: rec.buySignal,
-          aiComment: rec.reason
-        });
-      }
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`✅ 「${rec.name}」を本番保有銘柄に確定登録しました！`);
-      addLineMessage('bot', `✅【新規購入・本組入確定】\n「${rec.name}（${rec.ticker}）」を ${formatYen(investAmount)} で保有ポートフォリオに正式登録しました。`);
-    }
-
-    function confirmBuyFromTest(id) {
-      const item = holdings.find(h => h.id === id);
-      if (!item || !item.isTestAdd) return;
-
-      if (cashBalance < item.costBasis) {
-        showToast(`⚠️ 待機資金（${(cashBalance / 10000).toFixed(1)}万円）が不足しています`);
-        return;
-      }
-
-      cashBalance -= item.costBasis;
-      item.isTestAdd = false;
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`✅ 「${item.name}」を本番保有銘柄として確定しました！`);
-      addLineMessage('bot', `✅【本組入確定】\nテスト中だった「${item.name}」を ${formatYen(item.costBasis)} で正式な保有銘柄に登録しました。`);
-    }
-
-    function removeHoldingTest(id) {
-      const idx = holdings.findIndex(h => h.id === id);
-      if (idx === -1) return;
-      const removed = holdings[idx];
-      holdings.splice(idx, 1);
-      if (selectedStockId === id) selectedStockId = null;
-
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`「${removed.name}」の組入テストを解除しました`);
-    }
-
-    function openCashModal() {
-      document.getElementById('cash-modal-current').textContent = `${(cashBalance / 10000).toFixed(1)} 万円`;
-      document.getElementById('cash-add-amount').value = '';
-      document.getElementById('cash-add-note').value = '';
-      setCashModalMode('add');
-      document.getElementById('cash-modal').classList.remove('hidden');
-    }
-
-    function closeCashModal() {
-      document.getElementById('cash-modal').classList.add('hidden');
-    }
-
-    function setCashModalMode(mode) {
-      cashModalMode = mode;
-      const btnAdd = document.getElementById('cash-mode-add');
-      const btnSub = document.getElementById('cash-mode-sub');
-      const btnSet = document.getElementById('cash-mode-set');
-      const labelEl = document.getElementById('cash-input-label');
-      const submitBtn = document.getElementById('cash-submit-btn');
-      const quickEl = document.getElementById('cash-quick-buttons');
-      const inputEl = document.getElementById('cash-add-amount');
-
-      [btnAdd, btnSub, btnSet].forEach(b => {
-        b.className = 'py-1.5 px-2 rounded-lg text-cyan-200 hover:text-white transition';
-      });
-
-      if (mode === 'add') {
-        btnAdd.className = 'py-1.5 px-2 rounded-lg bg-emerald-500 text-slate-950 font-bold transition';
-        labelEl.textContent = '追加入金する金額（万円）';
-        submitBtn.textContent = '追加入金する';
-        submitBtn.className = 'px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,255,157,0.3)] transition';
-        quickEl.classList.remove('hidden');
-        inputEl.placeholder = '例: 30';
-      } else if (mode === 'sub') {
-        btnSub.className = 'py-1.5 px-2 rounded-lg bg-amber-500 text-slate-950 font-bold transition';
-        labelEl.textContent = '出金・減額する金額（万円）';
-        submitBtn.textContent = '出金・減額する';
-        submitBtn.className = 'px-4 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-[0_0_15px_rgba(255,184,0,0.3)] transition';
-        quickEl.classList.add('hidden');
-        inputEl.placeholder = '例: 20';
-      } else {
-        btnSet.className = 'py-1.5 px-2 rounded-lg bg-cyan-500 text-slate-950 font-bold transition';
-        labelEl.textContent = '修正後の正しい待機資金残高（万円）';
-        submitBtn.textContent = 'この金額に修正する';
-        submitBtn.className = 'px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold shadow-[0_0_15px_rgba(0,240,255,0.3)] transition';
-        quickEl.classList.add('hidden');
-        inputEl.value = (cashBalance / 10000).toFixed(1);
-      }
-    }
-
-    function setCashInputAmount(manYen) {
-      document.getElementById('cash-add-amount').value = manYen;
-    }
-
-    function handleAdjustCash(e) {
-      e.preventDefault();
-      const manYen = Number(document.getElementById('cash-add-amount').value);
-      const note = document.getElementById('cash-add-note').value.trim();
-      if (isNaN(manYen) || manYen < 0) return;
-
-      const yen = Math.round(manYen * 10000);
-      let msg = '';
-
-      if (cashModalMode === 'add') {
-        cashBalance += yen;
-        msg = `待機資金に +${manYen.toFixed(1)}万円 を追加入金しました`;
-        addLineMessage('bot', `💴【待機資金入金】\n+${formatYen(yen)} を追加しました${note ? `（メモ: ${note}）` : ''}。現在の待機資金は ${formatYen(cashBalance)} です。`);
-      } else if (cashModalMode === 'sub') {
-        cashBalance = Math.max(0, cashBalance - yen);
-        msg = `待機資金から -${manYen.toFixed(1)}万円 を減額しました`;
-        addLineMessage('bot', `💴【待機資金調整】\n-${formatYen(yen)} を減額しました${note ? `（メモ: ${note}）` : ''}。現在の待機資金は ${formatYen(cashBalance)} です。`);
-      } else {
-        cashBalance = yen;
-        msg = `待機資金を ${manYen.toFixed(1)}万円 に直接修正しました`;
-        addLineMessage('bot', `✏️【待機資金残高修正】\n待機資金残高を ${formatYen(cashBalance)} に修正しました${note ? `（メモ: ${note}）` : ''}。`);
-      }
-
-      closeCashModal();
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(msg);
-    }
-
-    function openAddModal() {
-      document.getElementById('add-modal').classList.remove('hidden');
-    }
-
-    function closeAddModal() {
-      document.getElementById('add-modal').classList.add('hidden');
-    }
-
-    function handleAddStock(e) {
-      e.preventDefault();
-      const name = document.getElementById('new-name').value.trim();
-      const ticker = document.getElementById('new-ticker').value.trim().toUpperCase();
-      const sector = document.getElementById('new-sector').value;
-      const amountMan = Number(document.getElementById('new-amount').value);
-      const investAmount = Math.round(amountMan * 10000);
-
-      if (!name || !ticker || investAmount <= 0) return;
-      if (cashBalance < investAmount) {
-        showToast(`⚠️ 待機資金（${(cashBalance / 10000).toFixed(1)}万円）が不足しています`);
-        return;
-      }
-
-      cashBalance -= investAmount;
-      const newId = 'custom_' + Date.now();
-      holdings.push({
-        id: newId,
-        name,
-        ticker,
-        sector,
-        costBasis: investAmount,
-        currentValue: investAmount,
-        dividendYield: 2.5,
-        history1Y: Array(12).fill(amountMan),
-        trendSummary: '新規組み入れ銘柄。今後の値動きと移動平均線との乖離をAIが自動追跡します。',
-        newsSummary: '組み入れ直後のため特段の悪材料なし。決算スケジュールとセクター動向を監視中。',
-        aiComment: `新規組み入れ完了。防衛ラインは ${formatYen(investAmount * 0.9)}（-10%）に自動設定されました。`
-      });
-
-      closeAddModal();
-      const summary = evaluatePortfolio();
-      renderAll();
-      checkCashRatioAlert(summary);
-      showToast(`「${name}」（${amountMan}万円）を追加しました`);
-      addLineMessage('bot', `🆕【新規銘柄追加】\n「${name}（${ticker}）」を ${formatYen(investAmount)} で組み入れました。-10%損切りラインを自動監視します。`);
-    }
-
-    function resetSimulation() {
-      holdings = JSON.parse(JSON.stringify(INITIAL_HOLDINGS));
-      cashBalance = INITIAL_CASH;
-      selectedStockId = null;
-      deletedHoldingsHistory = [];
-      recCustomAmounts = {};
-      wasCashBelowTenPercent = false;
-
-      renderAll();
-      showToast('ポートフォリオを初期状態にリセットしました');
-    }
-
-    function addLineMessage(sender, text) {
-      const chatArea = document.getElementById('line-chat-area');
-      if (!chatArea) return;
-
-      const now = new Date();
-      const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
-
-      const msgDiv = document.createElement('div');
-      if (sender === 'user') {
-        msgDiv.className = 'flex justify-end items-end gap-1.5';
-        msgDiv.innerHTML = `
-          <span class="text-[9px] text-cyan-300/60 font-mono-num">${timeStr}</span>
-          <div class="bg-emerald-500 text-slate-950 font-medium rounded-2xl rounded-tr-sm px-3 py-2 max-w-[80%] whitespace-pre-line shadow-[0_0_12px_rgba(0,255,157,0.25)]">${text}</div>
-        `;
-      } else {
-        msgDiv.className = 'flex justify-start items-end gap-1.5';
-        msgDiv.innerHTML = `
-          <div class="bg-[#09182e] border border-cyan-500/35 text-cyan-50 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%] whitespace-pre-line leading-relaxed shadow-md">${text}</div>
-          <span class="text-[9px] text-cyan-300/60 font-mono-num">${timeStr}</span>
-        `;
-      }
-
-      chatArea.appendChild(msgDiv);
-      chatArea.scrollTop = chatArea.scrollHeight;
-    }
-
-    function clearLineMessages() {
-      const chatArea = document.getElementById('line-chat-area');
-      if (chatArea) chatArea.innerHTML = '';
-    }
-
-    function triggerDailyLineReport() {
-      const summary = evaluatePortfolio();
-      const sign = summary.totalPnl >= 0 ? '+' : '';
-      const msg = `🌅【AI投資参謀 朝刊レポート】\n` +
-        `総資産: ${formatYen(summary.totalAssets)}\n` +
-        `評価損益: ${sign}${formatYen(summary.totalPnl)} (${sign}${summary.totalPnlPct.toFixed(2)}%)\n` +
-        `待機資金: ${formatYen(cashBalance)} (${summary.cashRatio.toFixed(1)}%)\n\n` +
-        `📌 本日の判断:\n` +
-        (summary.dangerCount > 0
-          ? `⚠️ -10%防衛ライン割れが ${summary.dangerCount}件あります。早急な損切り対応を推奨します。`
-          : `全銘柄が-10%防衛ライン内で安定推移中。焦らず分散と押し目待機を継続しましょう！`);
-      addLineMessage('bot', msg);
-      showToast('LINE Botに定時レポートを送信しました');
-    }
-
-    function askLineBot(question) {
-      addLineMessage('user', question);
-      const summary = evaluatePortfolio();
-
-      setTimeout(() => {
-        if (question.includes('買い増し')) {
-          if (summary.cashRatio < 10) {
-            addLineMessage('bot', `⚠️ 現在の待機資金比率が ${summary.cashRatio.toFixed(1)}% で安全基準（10%）を下回っています。今は新規買い増しを控え、現金余力を守るべきタイミングです。`);
-          } else {
-            addLineMessage('bot', `✅ 待機資金は ${summary.cashRatio.toFixed(1)}%（${(cashBalance / 10000).toFixed(0)}万円）あり余力十分です！\nただし金融・米国ETFの比率が高めなので、ヘルスケア（武田薬品やJNJなど）への分散買い増しが最もおすすめです。`);
-          }
-        } else if (question.includes('危険')) {
-          const risky = holdings.filter(h => !h.isSellTest && h.pnlPct <= -5.0);
-          if (risky.length === 0) {
-            addLineMessage('bot', `🛡️ 現在、-5%以上の注意銘柄や-10%損切りライン接近銘柄はありません。全銘柄が健全な水準です！`);
-          } else {
-            const listStr = risky.map(r => `・${r.name}: ${r.pnlPct.toFixed(2)}%（防衛ラインまであと ${(r.pnlPct + 10).toFixed(1)}%）`).join('\n');
-            addLineMessage('bot', `🔍 現在監視中の銘柄はこちらです：\n${listStr}\n-10%を割れた瞬間に再度アラートをお送りします。`);
-          }
-        } else {
-          addLineMessage('bot', `🎯 過去傾向＆押し目シグナルから抽出した今の買い時候補：\n1. 武田薬品工業（配当4.4%・下値支持線付近）\n2. Johnson & Johnson（連続増配・RSI売られすぎ水準）\n左画面の「AI買い時おすすめ株」から組入テストができます！`);
-        }
-      }, 350);
-    }
-
-    let toastTimer = null;
-    function showToast(message, showUndo = false) {
-      const toast = document.getElementById('toast');
-      const msgEl = document.getElementById('toast-msg');
-      const undoBtn = document.getElementById('toast-undo-btn');
-      if (!toast || !msgEl) return;
-
-      msgEl.textContent = message;
-      if (undoBtn) {
-        if (showUndo && deletedHoldingsHistory.length > 0) {
-          undoBtn.classList.remove('hidden');
-        } else {
-          undoBtn.classList.add('hidden');
-        }
-      }
-
-      toast.classList.remove('hidden');
-      if (toastTimer) clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toast.classList.add('hidden');
-      }, showUndo ? 6000 : 3200);
-    }
-
-    window.addEventListener('resize', () => {
-      const summary = evaluatePortfolio();
-      renderAllocationChart(summary);
-      renderPnlHistoryChart(summary);
-    });
-
-    async function loadLivePortfolioData() {
-      try {
-        const res = await fetch('./portfolio_live.json?t=' + Date.now());
-        if (!res.ok) return false;
-        const liveData = await res.json();
-        if (!liveData || !Array.isArray(liveData.items) || liveData.items.length === 0) return false;
-
-        cashBalance = Math.round(liveData.cash_jpy || INITIAL_CASH);
-        holdings = liveData.items.map(item => {
-          const existing = INITIAL_HOLDINGS.find(h => h.ticker === item.ticker);
-          const costJpy = Math.round(item.cost_jpy);
-          const valJpy = Math.round(item.value_jpy);
-          return {
-            id: item.id || item.ticker.toLowerCase(),
-            name: item.name,
-            ticker: item.ticker,
-            sector: item.sector,
-            costBasis: costJpy,
-            currentValue: valJpy,
-            dividendYield: existing ? existing.dividendYield : 2.0,
-            history1Y: existing
-              ? [...existing.history1Y.slice(0, -1), valJpy / 10000]
-              : Array(12).fill(valJpy / 10000),
-            trendSummary: existing ? existing.trendSummary : `最新株価反映済（現在損益 ${item.pnl_pct >= 0 ? '+' : ''}${item.pnl_pct.toFixed(2)}%）。`,
-            newsSummary: existing ? existing.newsSummary : `リアルタイム為替 1$=${liveData.usdjpy.toFixed(1)}円 基準で自動評価中。`,
-            aiComment: item.pnl_pct <= -10
-              ? `🚨 緊急警告：-10%防衛ラインを割り込みました。機械的な損切りを推奨します。`
-              : existing ? existing.aiComment : `リアルタイムデータと連動中。防衛ラインは ${formatYen(costJpy * 0.9)} です。`
-          };
-        });
-
-        renderAll();
-        addLineMessage('bot', `📡【リアルタイムデータ同期完了】\n最終更新: ${liveData.timestamp}（1$=${liveData.usdjpy.toFixed(1)}円）\n最新の市場価格をダッシュボードに反映しました！`);
-        return true;
-      } catch (e) {
-        return false;
-      }
-    }
-
-    window.onload = async function () {
-      renderAll();
-      const loadedLive = await loadLivePortfolioData();
-      if (!loadedLive) {
-        addLineMessage('bot', '🤖 AI投資参謀システム起動完了（シミュレーションモード）。\n日米ポートフォリオの監視を開始しました。-10%防衛ライン・分散比率・買い時シグナルをリアルタイム追跡します。');
-      }
-    };
-  </script>
-</body>
-</html>
+            <div class="flex justify-between"><span class="text-cyan-300/70">現在の総資産評価額</span><span class="font-bold font-
